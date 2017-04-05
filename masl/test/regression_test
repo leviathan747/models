@@ -11,7 +11,7 @@ print_usage () {
 }
 
 # input variables
-BPINSTALL="/Users/levistarrett/xtuml/m621.cli/BridgePoint.app/Contents/Eclipse"
+BPINSTALL="/Users/levistarrett/xtuml/m625.cli/BridgePoint.app/Contents/Eclipse"
 OUT_DIR=
 
 # parse arguments
@@ -39,50 +39,25 @@ fi
 export WORKSPACE="/tmp/importwork"
 export BPHOME=$BPINSTALL
 
-# We have to create a workspace from a previously zipped one that contains a project 
-# because CLI Import can't create a project for a single file model itself.  The latter would
-# be much better.          
-echo "Preparing workspace $WORKSPACE"
-if [[ -d $WORKSPACE ]]; then
-    rm -rf $WORKSPACE      
-fi
-unzip -q -o $BPINSTALL/tools/mc/bin/importworkspace.zip -d /tmp/
-
 # lanch eclipse
 echo "Launching an Eclipse command line instance..."
-CLI_PORT_FILE=`mktemp`
-python $BPINSTALL/tools/mc/bin/launch-cli.py launch $CLI_PORT_FILE
+CLI_PORT=`mktemp`
+python $BPINSTALL/tools/mc/bin/launch-cli.py launch $CLI_PORT
 if [[ 0 != $? ]]; then
     echo "Eclipse launch failed."
     exit 1
 fi
-CLI_PORT=`cat $CLI_PORT_FILE`
-
-# project counter
-COUNTER=1
 
 # Run tests
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d ../SAC/SAC_OOA -o $OUT_DIR/00 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d 9027-1 -o $OUT_DIR/01 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d 9027-2 -o $OUT_DIR/02 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d 9027-3 -o $OUT_DIR/03 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d 9027-4 -o $OUT_DIR/04 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d 9027-5 -o $OUT_DIR/05 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d ipv6   -o $OUT_DIR/06 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d pei    -o $OUT_DIR/07 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d maslsupsub -o $OUT_DIR/08 -n $CLI_PORT -l d$COUNTER
-COUNTER=$[$COUNTER +1]
-$XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d 9149_id -o $OUT_DIR/09 -n $CLI_PORT -l d$COUNTER
+COUNTER=1
+while read TEST; do
+    if [[ $TEST != "//"* ]]; then
+        $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d $TEST -o $OUT_DIR/$COUNTER -n $(cat $CLI_PORT)
+        COUNTER=$[$COUNTER +1]
+    fi
+done
 
 # shut down eclipse
-python $BPINSTALL/tools/mc/bin/launch-cli.py cmd $CLI_PORT exit
+python $BPINSTALL/tools/mc/bin/launch-cli.py cmd $(cat $CLI_PORT) exit
 
 find $OUT_DIR -name "diff_*" -exec ls -l {} \;
