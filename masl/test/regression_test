@@ -32,11 +32,15 @@ if [[ $OUT_DIR == "" ]]; then OUT_DIR=.; fi
 
 XVFB=$(which xvfb-run)
 if [[ $XVFB == "" ]]; then
-  echo "Consider installing xvfb to run this suite headlessly.\n"
+  echo "Consider installing xvfb to run this suite headlessly."
 fi
 
 # set up workspace
 export WORKSPACE="/tmp/importwork"
+if [[ -d $WORKSPACE ]]; then
+	rm -rf $WORKSPACE
+fi
+
 export BPHOME=$BPINSTALL
 
 # lanch eclipse
