@@ -45,23 +45,18 @@ export BPHOME=$BPINSTALL
 
 # lanch eclipse
 echo "Launching an Eclipse command line instance..."
-CLI_PORT=`mktemp`
-python $BPINSTALL/tools/mc/bin/launch-cli.py launch $CLI_PORT
-if [[ 0 != $? ]]; then
-    echo "Eclipse launch failed."
-    exit 1
-fi
+$BPINSTALL/tools/mc/bin/CLI.sh Launch
 
 # Run tests
 COUNTER=1
 while read TEST; do
     if [[ $TEST != "//"* ]]; then
-        $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d $TEST -o $OUT_DIR/$COUNTER -n $(cat $CLI_PORT)
+        $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d $TEST -o $OUT_DIR/$COUNTER
         COUNTER=$[$COUNTER +1]
     fi
 done
 
 # shut down eclipse
-python $BPINSTALL/tools/mc/bin/launch-cli.py cmd $(cat $CLI_PORT) exit
+$BPINSTALL/tools/mc/bin/CLI.sh Launch -exit
 
 find $OUT_DIR -name "diff_*" -exec ls -l {} \;
