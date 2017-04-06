@@ -11,7 +11,7 @@ print_usage () {
 }
 
 # input variables
-BPINSTALL="/Users/levistarrett/xtuml/m625.cli/BridgePoint.app/Contents/Eclipse"
+BPINSTALL="/build/buildmt/roundtrip/BridgePoint"
 OUT_DIR=
 
 # parse arguments
@@ -70,8 +70,8 @@ while read TEST; do
             # run round trip for a domain
             $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d $TEST -o $OUT_DIR/$COUNTER
         fi
-        COUNTER=$[$COUNTER +1]
     fi
+    COUNTER=$[$COUNTER +1]
 done
 
 # shut down eclipse
