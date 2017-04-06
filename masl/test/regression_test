@@ -50,8 +50,26 @@ $BPINSTALL/tools/mc/bin/CLI.sh Launch
 # Run tests
 COUNTER=1
 while read TEST; do
-    if [[ $TEST != "//"* ]]; then
-        $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d $TEST -o $OUT_DIR/$COUNTER
+    if [[ $TEST != "#"* ]]; then
+        projects=($TEST)
+        if [[ ${#projects[@]} > 1 ]]; then
+            # run round trip for a project
+            CMD=
+            i=0
+            while [[ $i < ${#projects[@]} ]]; do
+                if [[ $i < $[${#projects[@]} -1] ]]; then
+                    CMD="$CMD-d "
+                else
+                    CMD="$CMD-p "
+                fi
+                CMD="$CMD${projects[$i]} "
+                i=$[$i +1]
+            done
+            $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip $CMD -o $OUT_DIR/$COUNTER
+        else
+            # run round trip for a domain
+            $XVFB $BPINSTALL/tools/mc/bin/masl_round_trip -d $TEST -o $OUT_DIR/$COUNTER
+        fi
         COUNTER=$[$COUNTER +1]
     fi
 done
