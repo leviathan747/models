@@ -1,0 +1,173 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	'Test Enums',
+	300,
+	'TE',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("f1508af5-1ab8-4519-996e-9e3bfb3ecbb7",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	'send_colorsA_ret_colorsA',
+	'',
+	"36b3b028-cfed-4261-977a-09b4b71f2115",
+	0,
+	'// ACTION_SPECIFICATION: TRUE
+return param.colorA;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TPARM
+	VALUES ("69247d0a-5ab9-4175-aaee-943c5571caaa",
+	"f1508af5-1ab8-4519-996e-9e3bfb3ecbb7",
+	'colorA',
+	"36b3b028-cfed-4261-977a-09b4b71f2115",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("36b3b028-cfed-4261-977a-09b4b71f2115",
+	"00000000-0000-0000-0000-000000000000",
+	'colorsA',
+	'ENUMERATION: TRUE
+Owner:enum1',
+	'',
+	'../../Datatypes/Datatypes.xtuml');
+INSERT INTO O_TFR
+	VALUES ("3caf137b-7b22-4b4e-aaf7-86b84a880a30",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	'send_colorsB_ret_colorsB',
+	'',
+	"5056e734-4440-45a2-83e3-fa9bcbd92c1c",
+	0,
+	'LOG::LogFailure(message:"TE::send_colorsA_ret_colorsA operation should not have been translated");
+return param.colorB;',
+	1,
+	'',
+	"f1508af5-1ab8-4519-996e-9e3bfb3ecbb7");
+INSERT INTO O_TPARM
+	VALUES ("fa6cb70d-5b59-4bf0-a3e7-a2e5c90bfa2d",
+	"3caf137b-7b22-4b4e-aaf7-86b84a880a30",
+	'colorB',
+	"5056e734-4440-45a2-83e3-fa9bcbd92c1c",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5056e734-4440-45a2-83e3-fa9bcbd92c1c",
+	"00000000-0000-0000-0000-000000000000",
+	'colorsB',
+	'comment here
+enumeration:TRUE
+//comment here
+enumerator0:red
+enumerator1:redder
+enumerator2:reddest
+//comment here
+',
+	'',
+	'../../Datatypes/Datatypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("1de550d4-1552-4116-bccb-59db6b7349c6",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_BATTR
+	VALUES ("1de550d4-1552-4116-bccb-59db6b7349c6",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_ATTR
+	VALUES ("1de550d4-1552-4116-bccb-59db6b7349c6",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	"00000000-0000-0000-0000-000000000000",
+	'id',
+	'',
+	'',
+	'id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7de5896d-eba4-44a5-8edd-39bbdb6aa010",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_BATTR
+	VALUES ("7de5896d-eba4-44a5-8edd-39bbdb6aa010",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_ATTR
+	VALUES ("7de5896d-eba4-44a5-8edd-39bbdb6aa010",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	"1de550d4-1552-4116-bccb-59db6b7349c6",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("bae9867d-eb3b-4b69-baa4-b9ca72e914ae",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_BATTR
+	VALUES ("bae9867d-eb3b-4b69-baa4-b9ca72e914ae",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_ATTR
+	VALUES ("bae9867d-eb3b-4b69-baa4-b9ca72e914ae",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	"7de5896d-eba4-44a5-8edd-39bbdb6aa010",
+	'colorA',
+	'',
+	'',
+	'colorA',
+	0,
+	"36b3b028-cfed-4261-977a-09b4b71f2115",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9ffc3aca-f949-40d8-8d2c-80c1eb2da71a",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_BATTR
+	VALUES ("9ffc3aca-f949-40d8-8d2c-80c1eb2da71a",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_ATTR
+	VALUES ("9ffc3aca-f949-40d8-8d2c-80c1eb2da71a",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	"bae9867d-eb3b-4b69-baa4-b9ca72e914ae",
+	'colorB',
+	'',
+	'',
+	'colorB',
+	0,
+	"5056e734-4440-45a2-83e3-fa9bcbd92c1c",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_OIDA
+	VALUES ("1de550d4-1552-4116-bccb-59db6b7349c6",
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	0,
+	'id');
+INSERT INTO O_ID
+	VALUES (1,
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO O_ID
+	VALUES (2,
+	"cc2b99f7-3c80-4138-8e94-d8feb8879365");
+INSERT INTO PE_PE
+	VALUES ("cc2b99f7-3c80-4138-8e94-d8feb8879365",
+	1,
+	"a7f055b6-c0b6-4faa-8720-c3769f60720f",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a7f055b6-c0b6-4faa-8720-c3769f60720f",
+	"00000000-0000-0000-0000-000000000000",
+	"aafcfd7c-a770-434f-954a-5e80d36b4c4d",
+	'Test Enums',
+	'',
+	300,
+	'../Test Enums.xtuml');

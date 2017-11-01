@@ -1,0 +1,149 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("b566d252-8624-452a-a9de-4c9158a74a9d",
+	'Object with User Id Attr R Side',
+	17,
+	'OR_USER',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("87e73960-ff18-452b-99ba-7e96e57ea859",
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_BATTR
+	VALUES ("87e73960-ff18-452b-99ba-7e96e57ea859",
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_ATTR
+	VALUES ("87e73960-ff18-452b-99ba-7e96e57ea859",
+	"b566d252-8624-452a-a9de-4c9158a74a9d",
+	"00000000-0000-0000-0000-000000000000",
+	'r_id',
+	'',
+	'',
+	'r_id',
+	0,
+	"59cf31b8-ccbd-4f50-8427-e2df5783dc04",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("59cf31b8-ccbd-4f50-8427-e2df5783dc04",
+	"00000000-0000-0000-0000-000000000000",
+	'my_string',
+	'',
+	'',
+	'../../Datatypes/Datatypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("de6be042-ef65-4dcf-8c01-b928d48badb9",
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_BATTR
+	VALUES ("de6be042-ef65-4dcf-8c01-b928d48badb9",
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_ATTR
+	VALUES ("de6be042-ef65-4dcf-8c01-b928d48badb9",
+	"b566d252-8624-452a-a9de-4c9158a74a9d",
+	"87e73960-ff18-452b-99ba-7e96e57ea859",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("b566d252-8624-452a-a9de-4c9158a74a9d",
+	"ba1e19a9-803f-4de4-bfe7-a9e6c3222bea",
+	0,
+	"fd5ed928-9c20-4eb8-a138-8833535e6147",
+	"ff21a505-b2ab-46d5-92b9-f6cb5721b684",
+	"5d2af86c-3dc4-49be-8216-4e43f618406e",
+	"23f40e46-c40d-4247-b251-a1c564023260",
+	"c0e3ec44-cf68-4aa7-a614-526992fec72c",
+	"a9055cf0-3816-4f3d-944c-2033d404b4cb",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Object with User Id Attr L Side',
+	'id',
+	'R8');
+INSERT INTO R_RGO_PROXY
+	VALUES ("b566d252-8624-452a-a9de-4c9158a74a9d",
+	"ff21a505-b2ab-46d5-92b9-f6cb5721b684",
+	"5d2af86c-3dc4-49be-8216-4e43f618406e",
+	'../wimx.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("fd5ed928-9c20-4eb8-a138-8833535e6147",
+	"ba1e19a9-803f-4de4-bfe7-a9e6c3222bea",
+	0,
+	"ff21a505-b2ab-46d5-92b9-f6cb5721b684",
+	"23f40e46-c40d-4247-b251-a1c564023260",
+	'../wimx.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("c0e3ec44-cf68-4aa7-a614-526992fec72c",
+	"b566d252-8624-452a-a9de-4c9158a74a9d",
+	"fd5ed928-9c20-4eb8-a138-8833535e6147",
+	"ba1e19a9-803f-4de4-bfe7-a9e6c3222bea",
+	1,
+	'id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("fd5ed928-9c20-4eb8-a138-8833535e6147",
+	"ba1e19a9-803f-4de4-bfe7-a9e6c3222bea",
+	'../Object with User Id Attr L Side/Object with User Id Attr L Side.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("c0e3ec44-cf68-4aa7-a614-526992fec72c",
+	"b566d252-8624-452a-a9de-4c9158a74a9d",
+	"de6be042-ef65-4dcf-8c01-b928d48badb9",
+	'id',
+	'',
+	'',
+	'id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("8b22c110-71d1-4599-b8da-26a41612fed5",
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_BATTR
+	VALUES ("8b22c110-71d1-4599-b8da-26a41612fed5",
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_ATTR
+	VALUES ("8b22c110-71d1-4599-b8da-26a41612fed5",
+	"b566d252-8624-452a-a9de-4c9158a74a9d",
+	"c0e3ec44-cf68-4aa7-a614-526992fec72c",
+	'i',
+	'',
+	'',
+	'i',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_OIDA
+	VALUES ("87e73960-ff18-452b-99ba-7e96e57ea859",
+	"b566d252-8624-452a-a9de-4c9158a74a9d",
+	0,
+	'r_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO O_ID
+	VALUES (2,
+	"b566d252-8624-452a-a9de-4c9158a74a9d");
+INSERT INTO PE_PE
+	VALUES ("b566d252-8624-452a-a9de-4c9158a74a9d",
+	1,
+	"d3300bab-79a0-4d4d-9b83-71b5fc12ed10",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("d3300bab-79a0-4d4d-9b83-71b5fc12ed10",
+	"00000000-0000-0000-0000-000000000000",
+	"7a749056-1c66-4376-807f-6c1dbdcb8e9e",
+	'wimx',
+	'',
+	1,
+	'../wimx.xtuml');

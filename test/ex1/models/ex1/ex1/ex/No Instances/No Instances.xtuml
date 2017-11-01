@@ -1,0 +1,153 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	'No Instances',
+	5,
+	'NOI',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("b03f5d19-223a-4743-ac17-172baf84dcdc",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e");
+INSERT INTO O_BATTR
+	VALUES ("b03f5d19-223a-4743-ac17-172baf84dcdc",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e");
+INSERT INTO O_ATTR
+	VALUES ("b03f5d19-223a-4743-ac17-172baf84dcdc",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"00000000-0000-0000-0000-000000000000",
+	'noi_id',
+	'',
+	'',
+	'noi_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	0,
+	"4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"376a6618-4f81-45f8-8dbc-1ffb6396083f",
+	"de4094c0-b3c5-461f-a840-898922116969",
+	"b81cf13e-e361-4eae-8ae1-e627691110b2",
+	"a9bf371f-218f-44cb-91a0-4c555a2f939d",
+	"d9b10e9c-2432-4be5-ae5e-99d03c688761",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Expression Test',
+	'et_id',
+	'R2');
+INSERT INTO R_RGO_PROXY
+	VALUES ("604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"376a6618-4f81-45f8-8dbc-1ffb6396083f",
+	"de4094c0-b3c5-461f-a840-898922116969",
+	'../ex.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	0,
+	"376a6618-4f81-45f8-8dbc-1ffb6396083f",
+	"b81cf13e-e361-4eae-8ae1-e627691110b2",
+	'../ex.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("a9bf371f-218f-44cb-91a0-4c555a2f939d",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	1,
+	'et_id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	'../Expression Test/Expression Test.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("a9bf371f-218f-44cb-91a0-4c555a2f939d",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"b03f5d19-223a-4743-ac17-172baf84dcdc",
+	'r2et_id',
+	'',
+	'r2',
+	'et_id',
+	1,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	0,
+	"4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"6cfb46ae-10b5-4756-8bf1-ea5a855c2bd6",
+	"dd4cf7ff-f49a-4a1b-a1b5-d707c331de48",
+	"641a0b45-cfa6-410d-89df-72e703d8d851",
+	"e1f4ff7d-42c1-4628-8917-fc3e7771a550",
+	"73d0e669-2c39-468b-8a07-27e1f6b3cee1",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Expression Test',
+	'et_id',
+	'R5');
+INSERT INTO R_RGO_PROXY
+	VALUES ("604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"6cfb46ae-10b5-4756-8bf1-ea5a855c2bd6",
+	"dd4cf7ff-f49a-4a1b-a1b5-d707c331de48",
+	'../ex.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	0,
+	"6cfb46ae-10b5-4756-8bf1-ea5a855c2bd6",
+	"641a0b45-cfa6-410d-89df-72e703d8d851",
+	'../ex.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("e1f4ff7d-42c1-4628-8917-fc3e7771a550",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"4bf5f3ce-4093-48ef-ba15-4f0bda409536",
+	"63c34aca-7be3-452c-a968-bb91fb35687f",
+	1,
+	'et_id');
+INSERT INTO O_ATTR
+	VALUES ("e1f4ff7d-42c1-4628-8917-fc3e7771a550",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	"a9bf371f-218f-44cb-91a0-4c555a2f939d",
+	'r5et_id',
+	'',
+	'r5',
+	'et_id',
+	1,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e");
+INSERT INTO O_OIDA
+	VALUES ("b03f5d19-223a-4743-ac17-172baf84dcdc",
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	0,
+	'noi_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e");
+INSERT INTO O_ID
+	VALUES (2,
+	"604aa0d5-9f50-4d94-921b-e21dc7aedb6e");
+INSERT INTO PE_PE
+	VALUES ("604aa0d5-9f50-4d94-921b-e21dc7aedb6e",
+	1,
+	"52d385c6-95cc-4eef-ac47-5898ad8f74ea",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("52d385c6-95cc-4eef-ac47-5898ad8f74ea",
+	"00000000-0000-0000-0000-000000000000",
+	"a66acd47-2f8e-49de-a841-01bc92439ff0",
+	'ex',
+	'',
+	1,
+	'../ex.xtuml');

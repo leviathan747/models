@@ -1,0 +1,160 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	'Cat',
+	2,
+	'C',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("7c41ea2d-7e73-4f7f-9ce8-f8fceff53e06",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_BATTR
+	VALUES ("7c41ea2d-7e73-4f7f-9ce8-f8fceff53e06",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_ATTR
+	VALUES ("7c41ea2d-7e73-4f7f-9ce8-f8fceff53e06",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"00000000-0000-0000-0000-000000000000",
+	'name',
+	'',
+	'',
+	'name',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b1974742-5723-4062-85c8-d0db853f5946",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_BATTR
+	VALUES ("b1974742-5723-4062-85c8-d0db853f5946",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_ATTR
+	VALUES ("b1974742-5723-4062-85c8-d0db853f5946",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"7c41ea2d-7e73-4f7f-9ce8-f8fceff53e06",
+	'number_legs',
+	'',
+	'',
+	'number_legs',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"557ce95d-a572-4e67-9537-1de998d8bd2f",
+	0,
+	"06de46f3-acee-4f69-9119-78e8950cb868",
+	"6bb01e81-b55e-446d-8352-5064d63fa249",
+	"bd27e596-2451-41fb-b766-7389e6d64b1e",
+	"cf84cebf-70eb-4e34-be63-59f95dfbf484",
+	"49f3bd3e-f4c5-4035-8e6c-b7d0a4a9d4bd",
+	"566384af-e776-4024-a2aa-f36498cca095",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Dog',
+	'name',
+	'R2.''is_seen_by''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"6bb01e81-b55e-446d-8352-5064d63fa249",
+	"bd27e596-2451-41fb-b766-7389e6d64b1e",
+	'../dogs.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("06de46f3-acee-4f69-9119-78e8950cb868",
+	"557ce95d-a572-4e67-9537-1de998d8bd2f",
+	0,
+	"6bb01e81-b55e-446d-8352-5064d63fa249",
+	"cf84cebf-70eb-4e34-be63-59f95dfbf484",
+	'../dogs.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("49f3bd3e-f4c5-4035-8e6c-b7d0a4a9d4bd",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"06de46f3-acee-4f69-9119-78e8950cb868",
+	"557ce95d-a572-4e67-9537-1de998d8bd2f",
+	0,
+	'name');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("06de46f3-acee-4f69-9119-78e8950cb868",
+	"557ce95d-a572-4e67-9537-1de998d8bd2f",
+	'../Dog/Dog.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("49f3bd3e-f4c5-4035-8e6c-b7d0a4a9d4bd",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"b1974742-5723-4062-85c8-d0db853f5946",
+	'viewing_dog',
+	'',
+	'',
+	'viewing_dog',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("59c76da0-8ce4-401d-9f1a-482e15d09daa",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_BATTR
+	VALUES ("59c76da0-8ce4-401d-9f1a-482e15d09daa",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_ATTR
+	VALUES ("59c76da0-8ce4-401d-9f1a-482e15d09daa",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"49f3bd3e-f4c5-4035-8e6c-b7d0a4a9d4bd",
+	'has_been_chased',
+	'',
+	'',
+	'has_been_chased',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("0a2754e6-13c7-450b-88ec-668e2bc0f485",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_BATTR
+	VALUES ("0a2754e6-13c7-450b-88ec-668e2bc0f485",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_ATTR
+	VALUES ("0a2754e6-13c7-450b-88ec-668e2bc0f485",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	"59c76da0-8ce4-401d-9f1a-482e15d09daa",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_OIDA
+	VALUES ("7c41ea2d-7e73-4f7f-9ce8-f8fceff53e06",
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	0,
+	'name');
+INSERT INTO O_ID
+	VALUES (1,
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO O_ID
+	VALUES (2,
+	"dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9");
+INSERT INTO PE_PE
+	VALUES ("dcf5b3cd-5cb6-4a37-9081-3dcc5ec906e9",
+	1,
+	"a614408f-61a4-40e8-bc2d-6aca5045f353",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a614408f-61a4-40e8-bc2d-6aca5045f353",
+	"00000000-0000-0000-0000-000000000000",
+	"b00ae7b2-201c-4909-924b-fc4b123a84aa",
+	'dogs',
+	'',
+	1,
+	'../dogs.xtuml');

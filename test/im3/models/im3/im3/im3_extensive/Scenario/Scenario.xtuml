@@ -1,0 +1,91 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("3c3e982a-3ac9-4b13-bb27-df56e4d39d7b",
+	'Scenario',
+	111,
+	'SC',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("f932ac38-9f46-493b-b264-49761230837e",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_BATTR
+	VALUES ("f932ac38-9f46-493b-b264-49761230837e",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_ATTR
+	VALUES ("f932ac38-9f46-493b-b264-49761230837e",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b",
+	"00000000-0000-0000-0000-000000000000",
+	'id',
+	'',
+	'',
+	'id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("28513bc7-28d0-4d78-8c14-8831809806e9",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_BATTR
+	VALUES ("28513bc7-28d0-4d78-8c14-8831809806e9",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_ATTR
+	VALUES ("28513bc7-28d0-4d78-8c14-8831809806e9",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b",
+	"f932ac38-9f46-493b-b264-49761230837e",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("442b06e3-56d3-407e-91d8-2e5ba36f5e0d",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_BATTR
+	VALUES ("442b06e3-56d3-407e-91d8-2e5ba36f5e0d",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_ATTR
+	VALUES ("442b06e3-56d3-407e-91d8-2e5ba36f5e0d",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b",
+	"28513bc7-28d0-4d78-8c14-8831809806e9",
+	'count',
+	'',
+	'',
+	'count',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_OIDA
+	VALUES ("f932ac38-9f46-493b-b264-49761230837e",
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b",
+	0,
+	'id');
+INSERT INTO O_ID
+	VALUES (1,
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO O_ID
+	VALUES (2,
+	"3c3e982a-3ac9-4b13-bb27-df56e4d39d7b");
+INSERT INTO PE_PE
+	VALUES ("3c3e982a-3ac9-4b13-bb27-df56e4d39d7b",
+	1,
+	"9c2ffd13-bddc-4698-ad1e-3eea022fba2c",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("9c2ffd13-bddc-4698-ad1e-3eea022fba2c",
+	"00000000-0000-0000-0000-000000000000",
+	"78652760-2b92-4cfb-8a2d-44a4714fbb3f",
+	'im3_extensive',
+	'',
+	100,
+	'../im3_extensive.xtuml');
