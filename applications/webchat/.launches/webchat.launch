@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.xtuml.bp.debug.ui.BPApplication">
+<booleanAttribute key="org.xtuml.bp.debug.ui.BPApplication.activity" value="false"/>
+<booleanAttribute key="org.xtuml.bp.debug.ui.BPApplication.deterministic" value="true"/>
+<mapAttribute key="org.xtuml.bp.debug.ui.BPApplication.models">
+<mapEntry key="webchat" value="92fb0192-adb6-4ad4-ade2-4d52c17e5e59_INTERNALTOKEN_1_INTERNALTOKEN_None_INTERNALTOKEN_enabled_TOKEN_f0a8d2ef-10e7-4b3c-b782-b2b855e21e2f_INTERNALTOKEN_1_INTERNALTOKEN_None_INTERNALTOKEN_enabled_TOKEN_e572a2d2-d1e7-42c2-885d-a04b0199da26_INTERNALTOKEN_1_INTERNALTOKEN_None_INTERNALTOKEN_enabled_TOKEN_"/>
+</mapAttribute>
+<booleanAttribute key="org.xtuml.bp.debug.ui.BPApplication.simtime" value="true"/>
+<intAttribute key="org.xtuml.bp.debug.ui.BPApplication.timeout" value="0"/>
+</launchConfiguration>

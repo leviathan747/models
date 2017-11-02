@@ -38,7 +38,7 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'setup',
 	'',
-	'',
+	'// do nothing',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
@@ -54,15 +54,21 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'join',
 	'',
-	'select any user from instances of user where ( selected.name == param.name );
+	'select any user from instances of user where ( selected.endpoint == param.user );
 if ( empty user )
-  create object instance user of user;
-  user.name = param.name;
-  return "";
+  select any user from instances of user where ( selected.name == param.name );
+  if ( empty user )
+    create object instance user of user;
+    user.name = param.name;
+    user.endpoint = param.user;
+    MSG::status( status:status::logged_in, message:"" );
+  else
+    MSG::status( status:status::error, message:"Screen name taken" );
+  end if;
 else
-  return "Screen name taken.";
+  MSG::status( status:status::error, message:"Already joined" );
 end if;',
-	"ba5eda7a-def5-0000-0000-000000000004",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
 	0);
@@ -71,6 +77,15 @@ INSERT INTO S_SPARM
 	"4ebd5f17-8c22-4f06-861d-517f5e19be2e",
 	'name',
 	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9cb1a248-f3a6-4d12-ba57-a96d2fcbc10d",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9cb1a248-f3a6-4d12-ba57-a96d2fcbc10d",
+	"4ebd5f17-8c22-4f06-861d-517f5e19be2e",
+	'user',
+	"ba5eda7a-def5-0000-0000-00000000000d",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -84,7 +99,7 @@ INSERT INTO PE_PE
 INSERT INTO S_SYNC
 	VALUES ("fbb6283f-503b-4bfa-b0f2-dfce2ca7dd4b",
 	"00000000-0000-0000-0000-000000000000",
-	'get_users',
+	'whosthere',
 	'',
 	'user_names = "";
 select many users from instances of user;
@@ -93,8 +108,8 @@ for each user in users
   user_names = user_names + separator + user.name;
   separator = ", ";
 end for;
-return user_names;',
-	"ba5eda7a-def5-0000-0000-000000000004",
+send MSG::users( users:user_names );',
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
 	0);
@@ -107,25 +122,21 @@ INSERT INTO PE_PE
 INSERT INTO S_SYNC
 	VALUES ("c7270e69-54c1-4555-9a56-c0bcf7afc707",
 	"00000000-0000-0000-0000-000000000000",
-	'send_message',
+	'send',
 	'',
-	'select any user from instances of user where ( selected.name == param.name );
+	'select any user from instances of user where ( selected.endpoint == param.user );
 if ( not_empty user )
-  send MSG::display_message( name:user.name, message:param.message );
+  select many other_users from instances of user where ( selected.endpoint != param.user );
+  for each other_user in other_users
+    send MSG::message( name:user.name, message:param.message ) to other_user.endpoint;
+  end for;
+else
+  MSG::status( status:status::error, message:"User not registered" );
 end if;',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
 	0);
-INSERT INTO S_SPARM
-	VALUES ("a14639fd-bf09-4597-b58e-ca0d7725d9d8",
-	"c7270e69-54c1-4555-9a56-c0bcf7afc707",
-	'name',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
 INSERT INTO S_SPARM
 	VALUES ("3cd68da2-10ba-49e2-902f-e71ada7701af",
 	"c7270e69-54c1-4555-9a56-c0bcf7afc707",
@@ -133,7 +144,16 @@ INSERT INTO S_SPARM
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
-	"a14639fd-bf09-4597-b58e-ca0d7725d9d8",
+	"a368672c-d2d2-43ee-a6ac-a8a0fb832682",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("a368672c-d2d2-43ee-a6ac-a8a0fb832682",
+	"c7270e69-54c1-4555-9a56-c0bcf7afc707",
+	'user',
+	"ba5eda7a-def5-0000-0000-00000000000d",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO PE_PE
 	VALUES ("c7270e69-54c1-4555-9a56-c0bcf7afc707",
@@ -146,10 +166,10 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'leave',
 	'',
-	'select any user from instances of user where ( selected.name == param.name );
-if ( not_empty user )
+	'select many users from instances of user where ( selected.endpoint == param.user );
+for each user in users
   delete object instance user;
-end if;',
+end for;',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
@@ -157,8 +177,8 @@ end if;',
 INSERT INTO S_SPARM
 	VALUES ("b4069542-2f28-4aee-97a8-a7db139f4336",
 	"17f91528-727a-48bb-b34f-15e486e2676c",
-	'name',
-	"ba5eda7a-def5-0000-0000-000000000004",
+	'user',
+	"ba5eda7a-def5-0000-0000-00000000000d",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",

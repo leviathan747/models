@@ -43,6 +43,24 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000006",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("b7d4f63f-edc8-4035-a765-815550dd62fb",
+	"62654dc1-8219-4c24-bbca-2edddf453204");
+INSERT INTO O_BATTR
+	VALUES ("b7d4f63f-edc8-4035-a765-815550dd62fb",
+	"62654dc1-8219-4c24-bbca-2edddf453204");
+INSERT INTO O_ATTR
+	VALUES ("b7d4f63f-edc8-4035-a765-815550dd62fb",
+	"62654dc1-8219-4c24-bbca-2edddf453204",
+	"9db10a2e-c90e-415c-9905-ad97aebf4b1c",
+	'logged_in',
+	'',
+	'',
+	'logged_in',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"62654dc1-8219-4c24-bbca-2edddf453204");
@@ -62,7 +80,7 @@ INSERT INTO EP_PKG_PROXY
 	VALUES ("d1a51457-d5ed-43ac-9c54-31352276bed0",
 	"00000000-0000-0000-0000-000000000000",
 	"bfd9c7ea-82e5-4547-8798-71b9a1ca6cb0",
-	'chat',
+	'behavior',
 	'',
 	0,
-	'../chat.xtuml');
+	'../behavior.xtuml');

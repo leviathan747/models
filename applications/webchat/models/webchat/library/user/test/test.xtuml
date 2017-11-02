@@ -1,0 +1,250 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	"bfd9c7ea-82e5-4547-8798-71b9a1ca6cb0",
+	'test',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("aad6ffe0-d18b-4888-a696-7fea49b537ab",
+	112,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'webchat::library::user::test');
+INSERT INTO DIM_DIA
+	VALUES ("aad6ffe0-d18b-4888-a696-7fea49b537ab",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("271d4b24-f35e-451d-ab64-708a34611f2c",
+	"00000000-0000-0000-0000-000000000000",
+	'login1',
+	'',
+	'::testLogin( name:"Levi" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("271d4b24-f35e-451d-ab64-708a34611f2c",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("9bc277ac-645f-4605-94eb-ac2a1be2adeb",
+	"00000000-0000-0000-0000-000000000000",
+	'login2',
+	'',
+	'::testLogin( name:"Courtney" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("9bc277ac-645f-4605-94eb-ac2a1be2adeb",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f49bff20-8830-4aaa-b242-44a0c95ae078",
+	"00000000-0000-0000-0000-000000000000",
+	'testMessage1',
+	'',
+	'::testCommand( command:"Hello there" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("f49bff20-8830-4aaa-b242-44a0c95ae078",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("1b39ad96-751b-40b0-b26a-779859a6c22d",
+	"00000000-0000-0000-0000-000000000000",
+	'testMessage2',
+	'',
+	'::testCommand( command:"Hi. How are you?" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("1b39ad96-751b-40b0-b26a-779859a6c22d",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("1ed11b2e-bb6c-46f3-a208-b421cdc9d8ba",
+	"00000000-0000-0000-0000-000000000000",
+	'testMessage3',
+	'',
+	'::testCommand( command:"I''m fine." );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("1ed11b2e-bb6c-46f3-a208-b421cdc9d8ba",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("4a88af93-0858-457b-bbe7-28331983d437",
+	"00000000-0000-0000-0000-000000000000",
+	'testWhosthere',
+	'',
+	'::testCommand( command:"/users" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("4a88af93-0858-457b-bbe7-28331983d437",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("0e191471-9253-4230-8f46-57f7939e97b2",
+	"00000000-0000-0000-0000-000000000000",
+	'testHelp',
+	'',
+	'::testCommand( command:"/help" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("0e191471-9253-4230-8f46-57f7939e97b2",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("115bc0a5-dcef-4177-8df9-351c52696571",
+	"00000000-0000-0000-0000-000000000000",
+	'testLeave',
+	'',
+	'::testCommand( command:"/exit" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("115bc0a5-dcef-4177-8df9-351c52696571",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("5f71e222-7cf8-404e-af5c-60cce6317430",
+	"00000000-0000-0000-0000-000000000000",
+	'testCommand',
+	'',
+	'select any user from instances of user;
+if ( not_empty user )
+  select one command related by user->command[R1.''enters most recent''];
+  if ( empty command )
+    create object instance command of command;
+    relate command to user across R1.''entered by'';
+  end if;
+  command.text = param.command;
+  generate user1:send() to user;
+end if;',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO S_SPARM
+	VALUES ("84d32754-fc58-437e-9eb2-8811badee1d6",
+	"5f71e222-7cf8-404e-af5c-60cce6317430",
+	'command',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("5f71e222-7cf8-404e-af5c-60cce6317430",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("56dc2ba5-c35d-4667-a641-2450a50ec807",
+	"00000000-0000-0000-0000-000000000000",
+	'testLogin',
+	'',
+	'select any user from instances of user;
+if ( empty user )
+  create object instance user of user;
+  user.name = param.name;
+  user.logged_in = false;
+  MSG::join( name:param.name );
+end if;',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO S_SPARM
+	VALUES ("449d9c44-a412-4ea2-aab5-de7f4d7b2dea",
+	"56dc2ba5-c35d-4667-a641-2450a50ec807",
+	'name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("56dc2ba5-c35d-4667-a641-2450a50ec807",
+	1,
+	"002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("002632ea-dc4c-4f8e-8ea9-d3121d27bb79",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"58bb6a8d-be59-4ad9-bda1-2f9bf66572d4",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("58bb6a8d-be59-4ad9-bda1-2f9bf66572d4",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'user',
+	'',
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../user.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("bfd9c7ea-82e5-4547-8798-71b9a1ca6cb0",
+	'webchat',
+	1,
+	'../../../webchat.xtuml');

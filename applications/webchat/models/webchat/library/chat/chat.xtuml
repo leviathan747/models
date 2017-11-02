@@ -188,7 +188,7 @@ INSERT INTO GD_GE
 	"8e1627ed-affe-4f31-8003-cb9fb4791539",
 	108,
 	0,
-	'webchat::library::chat::chat');
+	'webchat::library::chat::behavior');
 INSERT INTO GD_SHP
 	VALUES ("b4844057-a9a3-4c26-9c0f-ff7221d39981");
 INSERT INTO GD_NCS
@@ -236,16 +236,16 @@ INSERT INTO SPR_PEP
 	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
 INSERT INTO SPR_PS
 	VALUES ("243982e5-a343-4ba3-a3da-a6c8082f2a54",
-	'send_message',
+	'send',
 	'',
-	'::send_message( name:param.name, message:param.message );',
+	'::send( user:sender, message:param.message );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3c520e37-f497-46b4-b068-42876e63b86b",
 	"c976092f-deee-4199-ade6-0ec49545c001",
 	-1,
-	'send_message',
+	'send',
 	'',
 	'../messaging/messaging.xtuml');
 INSERT INTO SPR_PEP
@@ -254,7 +254,7 @@ INSERT INTO SPR_PEP
 	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
 INSERT INTO SPR_PS
 	VALUES ("772f6775-fde5-47a8-998c-25c2a3472fe7",
-	'display_message',
+	'message',
 	'',
 	'',
 	1,
@@ -263,61 +263,97 @@ INSERT INTO C_EP_PROXY
 	VALUES ("aea70306-e6f6-4807-a5ce-a1504ce299bd",
 	"c976092f-deee-4199-ade6-0ec49545c001",
 	-1,
-	'display_message',
+	'message',
 	'',
 	'../messaging/messaging.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("9236bce5-9f66-4b94-bb70-5b248e7a9c0b",
-	"57bdf29f-3c30-4492-92b0-bff96100ebf4",
+	VALUES ("4c052378-4991-4b16-8579-1e1ee430e426",
+	"989b4981-ebb5-4308-a33d-611a94f55867",
 	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
-INSERT INTO SPR_PO
-	VALUES ("9236bce5-9f66-4b94-bb70-5b248e7a9c0b",
-	'get_users',
-	'',
-	'return ::get_users();',
-	1,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("57bdf29f-3c30-4492-92b0-bff96100ebf4",
-	"c976092f-deee-4199-ade6-0ec49545c001",
-	-1,
-	'get_users',
-	'',
-	'../messaging/messaging.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("1e0a6cb0-dd09-4b2f-9019-5df4207824ec",
-	"7c21575f-45ba-44b1-8bd5-f9de3f565498",
-	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
-INSERT INTO SPR_PO
-	VALUES ("1e0a6cb0-dd09-4b2f-9019-5df4207824ec",
-	'join',
-	'',
-	'return ::join( name:param.name );',
-	1,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("7c21575f-45ba-44b1-8bd5-f9de3f565498",
-	"c976092f-deee-4199-ade6-0ec49545c001",
-	-1,
-	'join',
-	'',
-	'../messaging/messaging.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("e930e310-e8a3-4ca3-8a7d-06b4beef819f",
-	"6d30f145-2078-4724-a9bb-377fe5b8a76f",
-	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
-INSERT INTO SPR_PO
-	VALUES ("e930e310-e8a3-4ca3-8a7d-06b4beef819f",
+INSERT INTO SPR_PS
+	VALUES ("4c052378-4991-4b16-8579-1e1ee430e426",
 	'leave',
 	'',
-	'::leave( name:param.name );',
+	'::leave( user:sender );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("6d30f145-2078-4724-a9bb-377fe5b8a76f",
+	VALUES ("989b4981-ebb5-4308-a33d-611a94f55867",
 	"c976092f-deee-4199-ade6-0ec49545c001",
 	-1,
 	'leave',
+	'',
+	'../messaging/messaging.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("93d063cc-97b2-4595-91ba-bc4c73e07181",
+	"2c318181-f133-4ae5-9787-ec015cd2d1cd",
+	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
+INSERT INTO SPR_PS
+	VALUES ("93d063cc-97b2-4595-91ba-bc4c73e07181",
+	'join',
+	'',
+	'::join( user:sender, name:param.name );',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("2c318181-f133-4ae5-9787-ec015cd2d1cd",
+	"c976092f-deee-4199-ade6-0ec49545c001",
+	-1,
+	'join',
+	'',
+	'../messaging/messaging.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("cbb52299-4002-42bb-9674-f950469d83b0",
+	"3ced788d-ba80-4e82-830e-713b948decd2",
+	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
+INSERT INTO SPR_PS
+	VALUES ("cbb52299-4002-42bb-9674-f950469d83b0",
+	'whosthere',
+	'',
+	'::whosthere();',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("3ced788d-ba80-4e82-830e-713b948decd2",
+	"c976092f-deee-4199-ade6-0ec49545c001",
+	-1,
+	'whosthere',
+	'',
+	'../messaging/messaging.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("980ee297-1289-4119-85a9-9d3b5fd802bb",
+	"613c5d19-5084-4f5b-a7c4-10548b79417f",
+	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
+INSERT INTO SPR_PS
+	VALUES ("980ee297-1289-4119-85a9-9d3b5fd802bb",
+	'users',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("613c5d19-5084-4f5b-a7c4-10548b79417f",
+	"c976092f-deee-4199-ade6-0ec49545c001",
+	-1,
+	'users',
+	'',
+	'../messaging/messaging.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("06afea5e-cc56-4188-9d5b-c7072502fb9b",
+	"c8854872-aa74-40eb-8f2f-8be2b2151ba0",
+	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
+INSERT INTO SPR_PS
+	VALUES ("06afea5e-cc56-4188-9d5b-c7072502fb9b",
+	'error',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("c8854872-aa74-40eb-8f2f-8be2b2151ba0",
+	"c976092f-deee-4199-ade6-0ec49545c001",
+	-1,
+	'error',
 	'',
 	'../messaging/messaging.xtuml');
 INSERT INTO C_I_PROXY
