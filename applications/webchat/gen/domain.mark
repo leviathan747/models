@@ -63,6 +63,16 @@
 .//   .invoke MarkFunctionTranslationOff( "component", "initialize_AS" )
 .//   .invoke MarkFunctionTranslationOff( "*" )
 .//============================================================================
+.MarkFunctionTranslationOff( "user", "login1" )
+.MarkFunctionTranslationOff( "user", "login2" )
+.MarkFunctionTranslationOff( "user", "testCommand" )
+.MarkFunctionTranslationOff( "user", "testHelp" )
+.MarkFunctionTranslationOff( "user", "testLeave" )
+.MarkFunctionTranslationOff( "user", "testLogin" )
+.MarkFunctionTranslationOff( "user", "testMessage1" )
+.MarkFunctionTranslationOff( "user", "testMessage2" )
+.MarkFunctionTranslationOff( "user", "testMessage3" )
+.MarkFunctionTranslationOff( "user", "testWhosthere" )
 .//
 .//
 .//============================================================================
