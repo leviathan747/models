@@ -500,14 +500,14 @@ INSERT INTO SM_ACT
 select one command related by self->command[R1.''enters most recent''];
 if ( not_empty command )
   if ( "/users" == command.text )
-    MSG::whosthere();
+    MSG::whosthere( name:self.name );
   elif ( "/help" == command.text )
     ::help();
   elif ( "/exit" ==  command.text )
-    MSG::leave();
+    MSG::leave( name:self.name );
     ARCH::shutdown();
   else
-    MSG::send( message:command.text );
+    MSG::send( name:self.name, message:command.text );
   end if;
 end if;
 generate user2:idle() to self;',

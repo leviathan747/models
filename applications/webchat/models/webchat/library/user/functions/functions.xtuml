@@ -113,7 +113,7 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'users',
 	'',
-	'LOG::LogInfo( message:param.users );',
+	'LOG::LogInfo( message:"Users: " + param.users );',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
@@ -122,6 +122,15 @@ INSERT INTO S_SPARM
 	VALUES ("a34fb397-1a30-4e1d-b16f-d323ba925387",
 	"a6e81e3f-3da5-4efa-9ebb-0ace24a9f164",
 	'users',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"cdfc3d09-3f72-413e-b456-032bcce47e33",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("cdfc3d09-3f72-413e-b456-032bcce47e33",
+	"a6e81e3f-3da5-4efa-9ebb-0ace24a9f164",
+	'name',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
@@ -138,15 +147,12 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'status',
 	'',
-	'if ( status::logged_in == param.status )
-  select any user from instances of user;
-  if ( not_empty user )
+	'select any user from instances of user where ( selected.name == param.name );
+if ( not_empty user )
+  if ( status::logged_in == param.status )
     generate user8:login() to user;
-  end if;
-elif ( status::error == param.status )
-  LOG::LogFailure( message:param.message );
-  select any user from instances of user;
-  if ( not_empty user )
+  elif ( status::error == param.status )
+    LOG::LogFailure( message:param.message );
     generate user6:error() to user;
   end if;
 end if;',
@@ -161,7 +167,7 @@ INSERT INTO S_SPARM
 	"863ae241-d539-4e59-aa71-d84f94659287",
 	0,
 	'',
-	"00000000-0000-0000-0000-000000000000",
+	"729c2354-5d90-4637-8863-7d4decaac263",
 	'');
 INSERT INTO S_DT_PROXY
 	VALUES ("863ae241-d539-4e59-aa71-d84f94659287",
@@ -178,6 +184,15 @@ INSERT INTO S_SPARM
 	0,
 	'',
 	"8e7fc146-3cc8-4966-85d5-152b843b70c7",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("729c2354-5d90-4637-8863-7d4decaac263",
+	"62b9a2a3-e5ae-419a-804e-a4c69f3124c3",
+	'name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO PE_PE
 	VALUES ("62b9a2a3-e5ae-419a-804e-a4c69f3124c3",

@@ -16,7 +16,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("50e802de-befd-43ae-a2af-7d0ec611f389",
 	"d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3",
-	"00000000-0000-0000-0000-000000000000",
+	"8a9e0016-2c0d-4366-b5bd-008f930bc4bf",
 	'text',
 	'',
 	'',
@@ -25,9 +25,65 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
+INSERT INTO O_REF
+	VALUES ("d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3",
+	"62654dc1-8219-4c24-bbca-2edddf453204",
+	0,
+	"9db10a2e-c90e-415c-9905-ad97aebf4b1c",
+	"4b37fafa-d511-45f0-8a2a-a37b42a567ab",
+	"f768c36c-9c28-40df-b0d8-0864cf4391b1",
+	"d64ee473-26cc-4683-a866-0a3cf5f2552a",
+	"8a9e0016-2c0d-4366-b5bd-008f930bc4bf",
+	"2de9d3db-6afe-4193-a7bd-8c019be3bbb9",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'user',
+	'name',
+	'R1.''entered by''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3",
+	"4b37fafa-d511-45f0-8a2a-a37b42a567ab",
+	"f768c36c-9c28-40df-b0d8-0864cf4391b1",
+	'../behavior.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("9db10a2e-c90e-415c-9905-ad97aebf4b1c",
+	"62654dc1-8219-4c24-bbca-2edddf453204",
+	0,
+	"4b37fafa-d511-45f0-8a2a-a37b42a567ab",
+	"d64ee473-26cc-4683-a866-0a3cf5f2552a",
+	'../behavior.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("8a9e0016-2c0d-4366-b5bd-008f930bc4bf",
+	"d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3",
+	"9db10a2e-c90e-415c-9905-ad97aebf4b1c",
+	"62654dc1-8219-4c24-bbca-2edddf453204",
+	1,
+	'name');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("9db10a2e-c90e-415c-9905-ad97aebf4b1c",
+	"62654dc1-8219-4c24-bbca-2edddf453204",
+	'../user/user.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("8a9e0016-2c0d-4366-b5bd-008f930bc4bf",
+	"d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3",
+	"00000000-0000-0000-0000-000000000000",
+	'user_name',
+	'',
+	'user_',
+	'name',
+	1,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3");
+INSERT INTO O_OIDA
+	VALUES ("8a9e0016-2c0d-4366-b5bd-008f930bc4bf",
+	"d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3",
+	0,
+	'user_name');
 INSERT INTO O_ID
 	VALUES (1,
 	"d2f5cb2b-6ebe-4e5b-a472-039b6601c3f3");

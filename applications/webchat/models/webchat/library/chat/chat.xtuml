@@ -238,7 +238,7 @@ INSERT INTO SPR_PS
 	VALUES ("243982e5-a343-4ba3-a3da-a6c8082f2a54",
 	'send',
 	'',
-	'::send( user:sender, message:param.message );',
+	'::send( name:param.name, message:param.message );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -274,7 +274,7 @@ INSERT INTO SPR_PS
 	VALUES ("4c052378-4991-4b16-8579-1e1ee430e426",
 	'leave',
 	'',
-	'::leave( user:sender );',
+	'::leave( name:param.name );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -292,7 +292,7 @@ INSERT INTO SPR_PS
 	VALUES ("93d063cc-97b2-4595-91ba-bc4c73e07181",
 	'join',
 	'',
-	'::join( user:sender, name:param.name );',
+	'::join( name:param.name );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -310,7 +310,7 @@ INSERT INTO SPR_PS
 	VALUES ("cbb52299-4002-42bb-9674-f950469d83b0",
 	'whosthere',
 	'',
-	'::whosthere();',
+	'::whosthere( name:param.name );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -329,7 +329,7 @@ INSERT INTO SPR_PS
 	'users',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("613c5d19-5084-4f5b-a7c4-10548b79417f",
@@ -344,16 +344,16 @@ INSERT INTO SPR_PEP
 	"0ca9c44f-8cd3-41d0-a3bb-59095539784a");
 INSERT INTO SPR_PS
 	VALUES ("06afea5e-cc56-4188-9d5b-c7072502fb9b",
-	'error',
+	'status',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c8854872-aa74-40eb-8f2f-8be2b2151ba0",
 	"c976092f-deee-4199-ade6-0ec49545c001",
 	-1,
-	'error',
+	'status',
 	'',
 	'../messaging/messaging.xtuml');
 INSERT INTO C_I_PROXY

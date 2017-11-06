@@ -54,19 +54,13 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'join',
 	'',
-	'select any user from instances of user where ( selected.endpoint == param.user );
+	'select any user from instances of user where ( selected.name == param.name );
 if ( empty user )
-  select any user from instances of user where ( selected.name == param.name );
-  if ( empty user )
-    create object instance user of user;
-    user.name = param.name;
-    user.endpoint = param.user;
-    MSG::status( status:status::logged_in, message:"" );
-  else
-    MSG::status( status:status::error, message:"Screen name taken" );
-  end if;
+  create object instance user of user;
+  user.name = param.name;
+  MSG::status( name:param.name, status:status::logged_in, message:"" );
 else
-  MSG::status( status:status::error, message:"Already joined" );
+  MSG::status( name:param.name, status:status::error, message:"Screen name taken" );
 end if;',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
@@ -77,15 +71,6 @@ INSERT INTO S_SPARM
 	"4ebd5f17-8c22-4f06-861d-517f5e19be2e",
 	'name',
 	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"9cb1a248-f3a6-4d12-ba57-a96d2fcbc10d",
-	'');
-INSERT INTO S_SPARM
-	VALUES ("9cb1a248-f3a6-4d12-ba57-a96d2fcbc10d",
-	"4ebd5f17-8c22-4f06-861d-517f5e19be2e",
-	'user',
-	"ba5eda7a-def5-0000-0000-00000000000d",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -108,11 +93,20 @@ for each user in users
   user_names = user_names + separator + user.name;
   separator = ", ";
 end for;
-send MSG::users( users:user_names );',
+send MSG::users( name:param.name, users:user_names );',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
 	0);
+INSERT INTO S_SPARM
+	VALUES ("5f9acb6a-8cfe-4c8a-84c3-42128178661c",
+	"fbb6283f-503b-4bfa-b0f2-dfce2ca7dd4b",
+	'name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
 INSERT INTO PE_PE
 	VALUES ("fbb6283f-503b-4bfa-b0f2-dfce2ca7dd4b",
 	1,
@@ -124,14 +118,11 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'send',
 	'',
-	'select any user from instances of user where ( selected.endpoint == param.user );
+	'select any user from instances of user where ( selected.name == param.name );
 if ( not_empty user )
-  select many other_users from instances of user where ( selected.endpoint != param.user );
-  for each other_user in other_users
-    send MSG::message( name:user.name, message:param.message ) to other_user.endpoint;
-  end for;
+  send MSG::message( name:user.name, message:param.message );
 else
-  MSG::status( status:status::error, message:"User not registered" );
+  MSG::status( name:param.name, status:status::error, message:"User not registered" );
 end if;',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
@@ -149,8 +140,8 @@ INSERT INTO S_SPARM
 INSERT INTO S_SPARM
 	VALUES ("a368672c-d2d2-43ee-a6ac-a8a0fb832682",
 	"c7270e69-54c1-4555-9a56-c0bcf7afc707",
-	'user',
-	"ba5eda7a-def5-0000-0000-00000000000d",
+	'name',
+	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -166,10 +157,10 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'leave',
 	'',
-	'select many users from instances of user where ( selected.endpoint == param.user );
-for each user in users
+	'select any user from instances of user where ( selected.name == param.name );
+if ( not_empty user )
   delete object instance user;
-end for;',
+end if;',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
@@ -177,8 +168,8 @@ end for;',
 INSERT INTO S_SPARM
 	VALUES ("b4069542-2f28-4aee-97a8-a7db139f4336",
 	"17f91528-727a-48bb-b34f-15e486e2676c",
-	'user',
-	"ba5eda7a-def5-0000-0000-00000000000d",
+	'name',
+	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",

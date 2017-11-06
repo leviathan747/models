@@ -381,7 +381,7 @@ INSERT INTO SPR_RS
 	VALUES ("02a5e31c-7580-4a5b-88e6-5885e734ed3e",
 	'users',
 	'',
-	'::users( users:param.users );',
+	'::users( name:param.name, users:param.users );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -399,7 +399,7 @@ INSERT INTO SPR_RS
 	VALUES ("e93ecf76-fdb1-44e2-b672-5ba36d3bf154",
 	'status',
 	'',
-	'::status( status:param.status, message:param.message );',
+	'::status( name:param.name, status:param.status, message:param.message );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
