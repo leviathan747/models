@@ -42,8 +42,9 @@ INSERT INTO S_SYNC
 
 // create robot
 create object instance robot of robot;
-robot.startupWaitTime = 2000000;  // 2 s
+robot.startupWaitTime = 3000000;  // 3 s
 robot.tickTime = 10000;           // 10 ms
+robot.balancer = false;
 
 // create light sensor
 create object instance light_sensor of lightsensor;

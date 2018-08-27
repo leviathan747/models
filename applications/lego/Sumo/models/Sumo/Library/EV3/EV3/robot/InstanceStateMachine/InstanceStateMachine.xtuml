@@ -1334,7 +1334,10 @@ INSERT INTO SM_ACT
 	"b82b10d8-2c3f-4395-af7f-b3e4fd42a67f",
 	1,
 	'create event instance launch of robot7:launch() to self;
-timer = TIM::timer_start( event_inst:launch, microseconds:self.startupWaitTime );',
+timer = TIM::timer_start( event_inst:launch, microseconds:self.startupWaitTime );
+if ( self.balancer )
+  EV3BAL::init( gyro_offset:0 );
+end if;',
 	'',
 	0);
 INSERT INTO SM_MOAH
