@@ -277,7 +277,7 @@ public class SumoRobot {
 		}
 		
 		Vector2f forward = getDirection();
-		forward.scale(200);
+		forward.scale(300);
 		Vector2f reverse = forward.negate();
 		if (leftSpeed == SumoRing.DIRECTION_FORWARD) {
 			leftWheel.addForce(forward);

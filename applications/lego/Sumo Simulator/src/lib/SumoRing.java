@@ -113,10 +113,10 @@ public class SumoRing extends JFrame {
 		
 		// swap position every second finished game
 		if (numberGames % 2 == 0) {
-			sumo1 = new SumoRobot(sumoRing, new Vector2f(RING_CENTER_X - 3, RING_CENTER_Y + 10), 0, 50, 50, null);
+			sumo1 = new SumoRobot(sumoRing, new Vector2f(RING_CENTER_X - 3, RING_CENTER_Y + 10), 0, 80, 120, null);
 			sumo2 = new SumoRobot(sumoRing, new Vector2f(RING_CENTER_X + 3, RING_CENTER_Y - 10), PI, 80, 20, proxy);
 		} else {
-			sumo1 = new SumoRobot(sumoRing, new Vector2f(RING_CENTER_X + 3, RING_CENTER_Y - 10), PI, 50, 50, null);
+			sumo1 = new SumoRobot(sumoRing, new Vector2f(RING_CENTER_X + 3, RING_CENTER_Y - 10), PI, 80, 120, null);
 			sumo2 = new SumoRobot(sumoRing, new Vector2f(RING_CENTER_X - 3, RING_CENTER_Y + 10), 0, 80, 20, proxy);
 		}
 		sumo2.setName(name);
