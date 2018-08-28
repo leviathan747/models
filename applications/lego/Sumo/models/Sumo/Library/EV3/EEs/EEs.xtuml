@@ -74,7 +74,7 @@ INSERT INTO S_BRG
 	0,
 	"ba5eda7a-def5-0000-0000-000000000000",
 	'',
-	3,
+	1,
 	'',
 	0);
 INSERT INTO S_BPARM
@@ -125,6 +125,17 @@ INSERT INTO S_BPARM
 	'',
 	"e7aa5b6e-fecd-4b10-a975-f50abc6daa06",
 	'');
+INSERT INTO S_BRG
+	VALUES ("6c07927d-e811-41db-9078-6022be83bf9a",
+	"be2ecee3-8645-44ce-81f7-86f274f44f6d",
+	'is_balancer',
+	'',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	3,
+	'',
+	0);
 INSERT INTO PE_PE
 	VALUES ("be2ecee3-8645-44ce-81f7-86f274f44f6d",
 	1,

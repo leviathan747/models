@@ -114,3 +114,30 @@ EV3_CONFIG_getIntegerProperty( c_t p_name[ESCHER_SYS_MAX_STRING_LEN], i_t * p_va
   return FALSE;
 }
 
+
+/*
+ * Bridge:  is_balancer
+ * This operation simply queries to see if data is ready on port 4
+ * (where the gyro sensor is configured). This will not work if the gyro
+ * sensor is moved to another port. If no data is ready, this means no
+ * gyro is plugged in and therefore the robot is not a balancer.
+ */
+#include "platform_interface_layer.h"
+
+bool
+EV3_CONFIG_is_balancer()
+{
+  static uart_data_t * pUartSensorData = NULL;
+  if ( NULL == pUartSensorData ) {
+    brickinfo_t brickinfo;
+    ER ercd = fetch_brick_info(&brickinfo);
+    pUartSensorData = brickinfo.uart_sensors;
+  }
+  for (int i = 0; i < 10; i++) {         // timout after 10ms
+    if ((*pUartSensorData[EV3_PORT_4].status) & UART_DATA_READY)
+      return TRUE;
+    tslp_tsk(1);
+  }
+  return FALSE;
+}
+

@@ -248,23 +248,22 @@ INSERT INTO SM_ACT
 	VALUES ("33ccf84b-b80f-42fc-a2b1-af869d297d9b",
 	"748492c0-e38a-4358-9621-988d2a2b5ad1",
 	1,
-	'select one robot related by self->robot[R5];
-if ( Direction::backward == param.direction )
-  if ( robot.balancer )
+	'if ( Direction::backward == param.direction )
+  if ( CONFIG::is_balancer() )
     EV3BAL::run( power:-100, turn:0 );
   else
     result = EV3M::set_power( motor:EV3Motor::LEFT, power:-100 );
     result = EV3M::set_power( motor:EV3Motor::RIGHT, power:-100 );
   end if;
 elif ( Direction::forward == param.direction )
-  if ( robot.balancer )
+  if ( CONFIG::is_balancer() )
     EV3BAL::run( power:100, turn:0 );
   else
     result = EV3M::set_power( motor:EV3Motor::LEFT, power:100 );
     result = EV3M::set_power( motor:EV3Motor::RIGHT, power:100 );
   end if;
 elif ( Direction::stop == param.direction )
-  if ( robot.balancer )
+  if ( CONFIG::is_balancer() )
     EV3BAL::run( power:0, turn:0 );
   else
     result = EV3M::stop( motor:EV3Motor::LEFT, brake:true );
@@ -286,23 +285,22 @@ INSERT INTO SM_ACT
 	VALUES ("7e8d0821-5df8-4a53-8b15-6fba4875596e",
 	"748492c0-e38a-4358-9621-988d2a2b5ad1",
 	1,
-	'select one robot related by self->robot[R5];
-if ( Orientation::left == param.orientation )
-  if ( robot.balancer )
+	'if ( Orientation::left == param.orientation )
+  if ( CONFIG::is_balancer() )
     EV3BAL::run( power:0, turn:-100 );
   else
     result = EV3M::set_power( motor:EV3Motor::LEFT, power:-100 );
     result = EV3M::set_power( motor:EV3Motor::RIGHT, power:100 );
   end if;
 elif ( Orientation::right == param.orientation )
-  if ( robot.balancer )
+  if ( CONFIG::is_balancer() )
     EV3BAL::run( power:0, turn:100 );
   else
     result = EV3M::set_power( motor:EV3Motor::LEFT, power:100 );
     result = EV3M::set_power( motor:EV3Motor::RIGHT, power:-100 );
   end if;
 elif ( Orientation::straight == param.orientation )
-  if ( robot.balancer )
+  if ( CONFIG::is_balancer() )
     EV3BAL::run( power:100, turn:0 );
   else
     result = EV3M::set_power( motor:EV3Motor::LEFT, power:100 );

@@ -44,7 +44,6 @@ INSERT INTO S_SYNC
 create object instance robot of robot;
 robot.startupWaitTime = 3000000;  // 3 s
 robot.tickTime = 10000;           // 10 ms
-robot.balancer = false;
 
 // create light sensor
 create object instance light_sensor of lightsensor;
@@ -52,14 +51,16 @@ relate light_sensor to robot across R2;
 generate lightsensor5:tick() to light_sensor;
 
 // create touch sensors
-create object instance left_touch_sensor of touchsensor;
-left_touch_sensor.port = 1;
-relate left_touch_sensor to robot across R1;
-generate touchsensor1:tick() to left_touch_sensor;
-create object instance right_touch_sensor of touchsensor;
-right_touch_sensor.port = 2;
-relate right_touch_sensor to robot across R1;
-generate touchsensor1:tick() to right_touch_sensor;
+if ( not CONFIG::is_balancer() ) // balancing robot does not have touch sensors
+  create object instance left_touch_sensor of touchsensor;
+  left_touch_sensor.port = 1;
+  relate left_touch_sensor to robot across R1;
+  generate touchsensor1:tick() to left_touch_sensor;
+  create object instance right_touch_sensor of touchsensor;
+  right_touch_sensor.port = 2;
+  relate right_touch_sensor to robot across R1;
+  generate touchsensor1:tick() to right_touch_sensor;
+end if;
 
 // create button
 create object instance enter_button of button;
