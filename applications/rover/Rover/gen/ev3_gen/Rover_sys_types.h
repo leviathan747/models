@@ -15,7 +15,7 @@
  * MaxSelectExtent:  0
  * MaxSelfEvents:  0
  * MaxNonSelfEvents:  0
- * MaxTimers:  3
+ * MaxTimers:  5
  * MaxInterleavedBridges:  0
  * MaxInterleavedBridgeDataSize:  8
  * CollectionsFlavor:  0
@@ -24,6 +24,20 @@
  * PersistentClassCount:  0
  * PersistInstanceCacheDepth:  128
  * PersistLinkCacheDepth:  128
+ *
+ * Component Name:  RComm
+ * MaxObjExtent:  0
+ * MaxRelExtent:  0
+ * MaxSelectExtent:  0
+ * MaxSelfEvents:  7
+ * MaxNonSelfEvents:  2
+ * MaxPriorityEvents:  0
+ * MaxTimers:  2
+ * InterleavedBridges:  0
+ * PEIClassCount:  0
+ * PersistentClassCount:  0
+ * InterleavedDataSize:  8
+ * CollectionsFlavor:  0
  *
  * Component Name:  Navigation
  * MaxObjExtent:  600
@@ -81,10 +95,10 @@ typedef unsigned char bool;
 #define ESCHER_SYS_MAX_ASSOCIATION_EXTENT 0
 #define ESCHER_SYS_MAX_TRANSIENT_EXTENT 0
 #define SYS_MAX_CONTAINERS ( ESCHER_SYS_MAX_ASSOCIATION_EXTENT + ESCHER_SYS_MAX_TRANSIENT_EXTENT )
-#define ESCHER_SYS_MAX_SELF_EVENTS 9
-#define ESCHER_SYS_MAX_NONSELF_EVENTS 4
+#define ESCHER_SYS_MAX_SELF_EVENTS 16
+#define ESCHER_SYS_MAX_NONSELF_EVENTS 6
 #define ESCHER_SYS_MAX_XTUML_EVENTS ( ESCHER_SYS_MAX_SELF_EVENTS + ESCHER_SYS_MAX_NONSELF_EVENTS )
-#define ESCHER_SYS_MAX_XTUML_TIMERS 3
+#define ESCHER_SYS_MAX_XTUML_TIMERS 5
 #define ESCHER_SYS_MAX_INTERLEAVED_BRIDGES 0
 #define ESCHER_SYS_MAX_INTERLEAVED_BRIDGE_DATA 8
 
@@ -162,10 +176,10 @@ typedef u4_t Escher_uSec_t;
  * Note we include stdio.h for printf.  Otherwise, it is not needed.
  */
 #include <stdio.h>
-#include "ev3api.h"
 #include "mclm_ev3.h"
 #include "ev3api.h"
 #include "mclm_ev3.h"
+#include "ev3api.h"
 #include "sys_xtuml.h"
 #include "sys_user_co.h"
 /*
@@ -211,7 +225,32 @@ typedef struct Escher_xtUMLevent_s Escher_xtUMLEvent_t;
 
 typedef unsigned long ETimer_time_t;
 
-typedef void Escher_Timer_t;
+/*---------------------------------------------------------------------
+ * Timer "Object" Structure Declaration
+ *    [next] is the mechanism used to collect and sequence timers.
+ *    Timer instances are strung together in an active (animate)
+ *    list and an inactive (inanimate) list.  The next pointer
+ *    provides the "hole for the beads".
+ *    [expiration] is the system clock time at which this
+ *    timer will pop.
+ *    [recurrence] is the repeating expiration duration
+ *    [event] is the handle of the event that the timer will
+ *    generate upon expiration.
+ *    [accesskey] is the unique serial number for this timer allocation
+ *-------------------------------------------------------------------*/
+typedef struct ETimer_s ETimer_t;
+struct ETimer_s {
+  ETimer_t * next;
+  ETimer_time_t expiration;
+  ETimer_time_t recurrence;
+  Escher_xtUMLEvent_t * event;
+  u4_t accesskey;
+};
+
+typedef struct {
+  ETimer_t * timer;
+  u4_t key;
+} Escher_Timer_t;
 
 /*
  * Event Macros
@@ -314,11 +353,14 @@ typedef struct {
   r_t x;
   r_t z;
 } Rover_sdt_position;
-#define SYSTEM_DOMAIN_COUNT 1
+#define SYSTEM_DOMAIN_COUNT 2
 /* xtUML domain identification numbers */
 #define Navigation_DOMAIN_ID 0
 #define Navigation_DOMAIN_ID_text "Navigation"
 #include "Navigation_classes.h"
+#define RComm_DOMAIN_ID 1
+#define RComm_DOMAIN_ID_text "RComm"
+#include "RComm_classes.h"
 /*----------------------------------------------------------------------------
  *
  * Run time instrumentation and tracing declarations are defined here.
@@ -332,7 +374,7 @@ typedef struct {
  *
  *--------------------------------------------------------------------------*/
 
-void bt_printf(const char * restrict format, ...);
+void log_printf(const char * restrict format, ...);
 
 #define XTUML_TRACE_FLUSH( i ) fflush( i )
 
@@ -343,14 +385,14 @@ void bt_printf(const char * restrict format, ...);
 /* #define XTUML_SOURCE_PROLOGUE */
 
 #ifndef XTUML_SOURCE_PROLOGUE
-#define XTUML_SOURCE_PROLOGUE bt_printf( "%s #%6u: ", __FILE__, __LINE__ ); XTUML_TRACE_FLUSH( 0 )
+#define XTUML_SOURCE_PROLOGUE log_printf( "%s #%6u: ", __FILE__, __LINE__ ); XTUML_TRACE_FLUSH( 0 )
 #endif
 
 /* To suppress state transition start tracing, uncomment the following macro */
 /* #define STATE_TXN_START_TRACE( obj_kl, state_num, state_name ) */
 
 #ifndef STATE_TXN_START_TRACE
-#define STATE_TXN_START_TRACE( obj_kl, state_num, state_name ) do {   XTUML_SOURCE_PROLOGUE;   bt_printf( "Transition started:  %s State [%u] %s\n", obj_kl, state_num, state_name ); } while (0)
+#define STATE_TXN_START_TRACE( obj_kl, state_num, state_name ) do {   XTUML_SOURCE_PROLOGUE;   log_printf( "Transition started:  %s State [%u] %s\n", obj_kl, state_num, state_name ); } while (0)
 #endif
 
 /*
@@ -360,7 +402,7 @@ void bt_printf(const char * restrict format, ...);
 /* #define STATE_TXN_END_TRACE( obj_kl, state_num, state_name ) */
 
 #ifndef STATE_TXN_END_TRACE
-#define STATE_TXN_END_TRACE( obj_kl, state_num, state_name ) do {   XTUML_SOURCE_PROLOGUE;   bt_printf( "Transition complete:  %s State [%u] %s\n", obj_kl, state_num, state_name );   XTUML_TRACE_FLUSH( 0 ); } while (0)
+#define STATE_TXN_END_TRACE( obj_kl, state_num, state_name ) do {   XTUML_SOURCE_PROLOGUE;   log_printf( "Transition complete:  %s State [%u] %s\n", obj_kl, state_num, state_name );   XTUML_TRACE_FLUSH( 0 ); } while (0)
 #endif
 
 /*
@@ -370,7 +412,7 @@ void bt_printf(const char * restrict format, ...);
 #define STATE_TXN_IG_TRACE( obj_kl, state_num )
 
 #ifndef STATE_TXN_IG_TRACE
-#define STATE_TXN_IG_TRACE( obj_kl, state_num ) do {   XTUML_SOURCE_PROLOGUE;   bt_printf( "Event ignored:  %s current_state = %u\n", obj_kl, state_num );   XTUML_TRACE_FLUSH( 0 ); } while (0)
+#define STATE_TXN_IG_TRACE( obj_kl, state_num ) do {   XTUML_SOURCE_PROLOGUE;   log_printf( "Event ignored:  %s current_state = %u\n", obj_kl, state_num );   XTUML_TRACE_FLUSH( 0 ); } while (0)
 #endif
 
 /*
@@ -380,7 +422,7 @@ void bt_printf(const char * restrict format, ...);
 /* #define STATE_TXN_CH_TRACE( obj_kl, state_num ) */
 
 #ifndef STATE_TXN_CH_TRACE
-#define STATE_TXN_CH_TRACE( obj_kl, state_num ) do {   XTUML_SOURCE_PROLOGUE;   bt_printf( "Event cannot happen:  %s current_state = %u\n", obj_kl, state_num );   XTUML_TRACE_FLUSH( 0 ); } while (0)
+#define STATE_TXN_CH_TRACE( obj_kl, state_num ) do {   XTUML_SOURCE_PROLOGUE;   log_printf( "Event cannot happen:  %s current_state = %u\n", obj_kl, state_num );   XTUML_TRACE_FLUSH( 0 ); } while (0)
 #endif
 
 /*
@@ -390,7 +432,7 @@ void bt_printf(const char * restrict format, ...);
 /* #define COMP_MSG_START_TRACE( arg_format, component_number, port_number, message_number, args... ) */
 
 #ifndef COMP_MSG_START_TRACE
-#define COMP_MSG_START_TRACE( arg_format, component_number, port_number, message_number, args... ) do {   XTUML_SOURCE_PROLOGUE;   bt_printf( "component %d port %d message %d " arg_format "\n", component_number, port_number, message_number, ## args );   XTUML_TRACE_FLUSH( 0 ); } while (0)
+#define COMP_MSG_START_TRACE( arg_format, component_number, port_number, message_number, args... ) do {   XTUML_SOURCE_PROLOGUE;   log_printf( "component %d port %d message %d " arg_format "\n", component_number, port_number, message_number, ## args );   XTUML_TRACE_FLUSH( 0 ); } while (0)
 #endif
 
 /*
@@ -406,7 +448,7 @@ void bt_printf(const char * restrict format, ...);
 /* #define XTUML_OAL_STMT_TRACE( blck_level, stmt_action ) */
 
 #ifndef XTUML_OAL_STMT_TRACE
-#define XTUML_OAL_STMT_TRACE( blck_level, stmt_action ) do {   XTUML_SOURCE_PROLOGUE;   { /* indenting */ s1_t i; for ( i = 0; i < blck_level; i++ ) bt_printf( "  " ); }   bt_printf( "%s\n", stmt_action );   XTUML_TRACE_FLUSH( 0 ); } while (0)
+#define XTUML_OAL_STMT_TRACE( blck_level, stmt_action ) do {   XTUML_SOURCE_PROLOGUE;   { /* indenting */ s1_t i; for ( i = 0; i < blck_level; i++ ) log_printf( "  " ); }   log_printf( "%s\n", stmt_action );   XTUML_TRACE_FLUSH( 0 ); } while (0)
 #endif
 
 /* To suppress empty handle detection, modify the following macro.  */

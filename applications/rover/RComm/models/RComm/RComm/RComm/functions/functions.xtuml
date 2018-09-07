@@ -41,7 +41,8 @@ INSERT INTO S_SYNC
 	'// This function is here simply to assure that the model
 // data from MCLMShared project gets included in pre-builder
 // output
-EV3B::Initialize();',
+EV3B::Initialize();
+EV3BAL::init( gyro_offset:0 );',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
