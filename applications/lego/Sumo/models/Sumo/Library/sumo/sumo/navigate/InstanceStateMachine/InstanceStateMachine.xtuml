@@ -541,7 +541,7 @@ INSERT INTO SM_ACT
 	"16a3b4fb-9031-46ab-a722-1fc6da79d7cb",
 	1,
 	'self.line_detections = self.line_detections + 1;
-if ( self.line_detections >= 3 )
+if ( self.line_detections >= 300 )
   generate navigate7:halt() to self;
 else
   select one s related by self->steering[R1];
@@ -567,7 +567,13 @@ INSERT INTO SM_ACT
 	'select one d related by self->drive[R2];
 d.stop();
 select one s related by self->steering[R1];
-generate steering1:left() to s;
+if ( Orientation::right == self.last_turn )
+  generate steering1:left() to s;
+  self.last_turn = Orientation::left;
+else
+  generate steering2:right() to s;
+  self.last_turn = Orientation::right;
+end if;
 create event instance e of navigate1:pop() to self;
 t = TIM::timer_start( microseconds:self.target_duration * 1000000, event_inst:e );',
 	'',
