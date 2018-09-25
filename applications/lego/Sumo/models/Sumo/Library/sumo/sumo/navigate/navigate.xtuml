@@ -61,6 +61,24 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000006",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("25d7ca6f-6a23-4512-beb7-3845dbf705d2",
+	"f70195ed-5da3-43dd-b1ba-5c4d1759bad6");
+INSERT INTO O_BATTR
+	VALUES ("25d7ca6f-6a23-4512-beb7-3845dbf705d2",
+	"f70195ed-5da3-43dd-b1ba-5c4d1759bad6");
+INSERT INTO O_ATTR
+	VALUES ("25d7ca6f-6a23-4512-beb7-3845dbf705d2",
+	"f70195ed-5da3-43dd-b1ba-5c4d1759bad6",
+	"837e0d3f-9544-45d7-a2a7-6d191b5c076c",
+	'line_detections',
+	'',
+	'',
+	'line_detections',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'0');
 INSERT INTO O_ID
 	VALUES (0,
 	"f70195ed-5da3-43dd-b1ba-5c4d1759bad6");
