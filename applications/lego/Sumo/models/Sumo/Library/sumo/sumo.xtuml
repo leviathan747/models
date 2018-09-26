@@ -272,8 +272,8 @@ INSERT INTO SPR_RO
 	'LOG::LogInfo( message:"IO::touchLeft" );
 // Do something when the touch sensor on input one is activated.
 
-select any n from instances of navigate;
-generate navigate3:leftBumperPress() to n;
+select any b from instances of bumpers;
+generate bumpers3:leftBumperPress() to b;
 ',
 	1,
 	0);
@@ -296,15 +296,16 @@ INSERT INTO SPR_RO
 create object instance n of navigate;
 create object instance d of drive;
 create object instance s of steering;
+create object instance b of bumpers;
 
 relate n to s across R1;
 relate n to d across R2;
+relate n to b across R3;
 
 d.speed = 255;
 
-n.retreat_duration = 3;
-n.target_duration = 1.35;
-n.last_turn = Orientation::left;
+n.retreat_duration = 1;
+n.target_duration = 1.5;
 
 generate navigate1:pop() to n;
 
@@ -329,8 +330,8 @@ INSERT INTO SPR_RO
 	'LOG::LogInfo( message:"IO::touchRight" );
 // Do something when the touch sensor on input one is activated.
 
-select any n from instances of navigate;
-generate navigate4:rightBumperPress() to n;
+select any b from instances of bumpers;
+generate bumpers4:rightBumperPress() to b;
 ',
 	1,
 	0);
@@ -408,8 +409,8 @@ INSERT INTO SPR_RO
 	'LOG::LogInfo( message:"IO::untouchLeft" );
 // Do something when the touch sensor on input one is activated.
 
-select any n from instances of navigate;
-generate navigate5:leftBumperRelease() to n;',
+select any b from instances of bumpers;
+generate bumpers5:leftBumperRelease() to b;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -430,8 +431,8 @@ INSERT INTO SPR_RO
 	'LOG::LogInfo( message:"IO::untouchRight" );
 // Do something when the touch sensor on input one is activated.
 
-select any n from instances of navigate;
-generate navigate6:rightBumperRelease() to n;',
+select any b from instances of bumpers;
+generate bumpers6:rightBumperRelease() to b;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY

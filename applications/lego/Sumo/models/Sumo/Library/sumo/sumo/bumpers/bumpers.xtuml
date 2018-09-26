@@ -1,0 +1,50 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("14a7aa41-261c-4aa5-923b-bad227b7017b",
+	'bumpers',
+	4,
+	'bumpers',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("703278fe-a465-4488-b8a6-6b00a109f6c3",
+	"14a7aa41-261c-4aa5-923b-bad227b7017b");
+INSERT INTO O_BATTR
+	VALUES ("703278fe-a465-4488-b8a6-6b00a109f6c3",
+	"14a7aa41-261c-4aa5-923b-bad227b7017b");
+INSERT INTO O_ATTR
+	VALUES ("703278fe-a465-4488-b8a6-6b00a109f6c3",
+	"14a7aa41-261c-4aa5-923b-bad227b7017b",
+	"00000000-0000-0000-0000-000000000000",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"14a7aa41-261c-4aa5-923b-bad227b7017b");
+INSERT INTO O_ID
+	VALUES (1,
+	"14a7aa41-261c-4aa5-923b-bad227b7017b");
+INSERT INTO O_ID
+	VALUES (2,
+	"14a7aa41-261c-4aa5-923b-bad227b7017b");
+INSERT INTO PE_PE
+	VALUES ("14a7aa41-261c-4aa5-923b-bad227b7017b",
+	1,
+	"28f36638-19d6-4f5b-b724-b3060c22ef4b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("28f36638-19d6-4f5b-b724-b3060c22ef4b",
+	"00000000-0000-0000-0000-000000000000",
+	"21bba8bf-80a0-498d-9b95-6047aabbb779",
+	'sumo',
+	'',
+	1,
+	'../sumo.xtuml');
