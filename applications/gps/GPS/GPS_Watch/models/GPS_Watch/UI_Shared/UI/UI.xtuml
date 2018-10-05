@@ -1,0 +1,127 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("e346c958-67d5-409f-972d-538284c8547b",
+	"00000000-0000-0000-0000-000000000000",
+	'UI',
+	'');
+INSERT INTO C_EP
+	VALUES ("7f4be91d-0fb6-403c-a2e1-7831a70be3cd",
+	"e346c958-67d5-409f-972d-538284c8547b",
+	-1,
+	'setTime',
+	'');
+INSERT INTO C_IO
+	VALUES ("7f4be91d-0fb6-403c-a2e1-7831a70be3cd",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'setTime',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("26f5bc65-f05f-449d-8861-a64b82475e7c",
+	"7f4be91d-0fb6-403c-a2e1-7831a70be3cd",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'time',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("6fc20910-413b-4c6a-91ae-f96d54606985",
+	"e346c958-67d5-409f-972d-538284c8547b",
+	-1,
+	'setData',
+	'');
+INSERT INTO C_IO
+	VALUES ("6fc20910-413b-4c6a-91ae-f96d54606985",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'setData',
+	'',
+	0,
+	'',
+	"7f4be91d-0fb6-403c-a2e1-7831a70be3cd");
+INSERT INTO C_PP
+	VALUES ("10561183-26e4-48a3-b4b1-7cb4e2422934",
+	"6fc20910-413b-4c6a-91ae-f96d54606985",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'value',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("005edf77-4047-40e7-9233-572766ca373b",
+	"6fc20910-413b-4c6a-91ae-f96d54606985",
+	"2a63ec79-4305-418c-b145-ee0adaf750c7",
+	'unit',
+	'',
+	0,
+	'',
+	"10561183-26e4-48a3-b4b1-7cb4e2422934");
+INSERT INTO S_DT_PROXY
+	VALUES ("2a63ec79-4305-418c-b145-ee0adaf750c7",
+	"00000000-0000-0000-0000-000000000000",
+	'UIUnit',
+	'',
+	'',
+	'../UI_Shared.xtuml');
+INSERT INTO C_EP
+	VALUES ("2b39c101-3155-427b-a71d-d5c58cd2848b",
+	"e346c958-67d5-409f-972d-538284c8547b",
+	-1,
+	'startTest',
+	'');
+INSERT INTO C_IO
+	VALUES ("2b39c101-3155-427b-a71d-d5c58cd2848b",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'startTest',
+	'',
+	0,
+	'',
+	"6fc20910-413b-4c6a-91ae-f96d54606985");
+INSERT INTO C_EP
+	VALUES ("a82a4901-566f-4db7-812f-3f3b7845a33f",
+	"e346c958-67d5-409f-972d-538284c8547b",
+	-1,
+	'setIndicator',
+	'');
+INSERT INTO C_IO
+	VALUES ("a82a4901-566f-4db7-812f-3f3b7845a33f",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'setIndicator',
+	'',
+	0,
+	'',
+	"2b39c101-3155-427b-a71d-d5c58cd2848b");
+INSERT INTO C_PP
+	VALUES ("42171fc6-67e0-4b6b-ab24-cb0613e1bb60",
+	"a82a4901-566f-4db7-812f-3f3b7845a33f",
+	"fdc50b29-c152-43af-adc1-60c1c0092953",
+	'indicator',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("fdc50b29-c152-43af-adc1-60c1c0092953",
+	"00000000-0000-0000-0000-000000000000",
+	'UIIndicator',
+	'',
+	'',
+	'../UI_Shared.xtuml');
+INSERT INTO PE_PE
+	VALUES ("e346c958-67d5-409f-972d-538284c8547b",
+	1,
+	"5eaf4a99-c2b0-4b4e-b286-7c95223eba73",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("5eaf4a99-c2b0-4b4e-b286-7c95223eba73",
+	"36a41cf7-d411-488d-99fc-74866d4fea39",
+	"36a41cf7-d411-488d-99fc-74866d4fea39",
+	'UI_Shared',
+	'',
+	0,
+	'../UI_Shared.xtuml');

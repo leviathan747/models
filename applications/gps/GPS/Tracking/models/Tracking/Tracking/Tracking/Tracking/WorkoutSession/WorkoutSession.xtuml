@@ -120,37 +120,6 @@ select one trackLog related by self->TrackLog[R4.''captures_path_in''];
 trackLog.clearTrackPoints();
 trackLog.clearLapMarkers();
 
-// Remove all goal specifications.
-select many goalSpecs related by self->GoalSpec[R10.''includes''];
-for each goalSpec in goalSpecs
-  unrelate self from goalSpec across R10.''includes'';
-  delete object instance goalSpec;
-end for;
-
-// Remove any currently executing goal and open achievement record.
-select one executingGoal related by self->Goal[R11.''is_currently_executing''];
-if ( not empty executingGoal )
-  select one openAchievement related by executingGoal->Achievement[R14.''has_open''];
-  if ( not empty openAchievement )
-    unrelate openAchievement from executingGoal across R14.''is_open_for'';
-    delete object instance openAchievement;
-  end if;
-  unrelate self from executingGoal across R11.''is_currently_executing'';
-  delete object instance executingGoal;
-end if;
-
-// Remove all other goals and achievement records.
-select many goals related by self->Goal[R13.''has_executed''];
-for each goal in goals
-  select many achievements related by goal->Achievement[R12.''has_recorded''];
-  for each achievement in achievements
-    unrelate goal from achievement across R12.''has_recorded'';
-    delete object instance achievement;
-  end for;
-  unrelate self from goal across R13.''has_executed'';
-  delete object instance goal;
-end for;
-
 // Reset the session.
 self.accumulatedDistance = 0.0;
 self.clearHeartRateSamples();
@@ -175,9 +144,7 @@ select one lastPoint related by self->TrackLog[R4.''captures_path_in'']->TrackPo
 speed = 0.0;
 if ( not empty lastPoint )
   cursor = lastPoint;
-  Speed::initialize();
-  select any spd from instances of Speed;
-  index = spd.SpeedAveragingWindow;  // Number of track points to use when calculating average speed.
+  index = SpeedAveragingWindow;  // Number of track points to use when calculating average speed.
   totalDistance = 0.0;
   elapsedTime = 0.0;  // Explicit delcaration because a Real is required for a later calculation.
   elapsedTime = lastPoint.time;
@@ -193,7 +160,7 @@ if ( not empty lastPoint )
     cursor = previousPoint;
   end while;
   elapsedTime = elapsedTime - cursor.time;
-  speed = (totalDistance / 1000) / (elapsedTime / spd.SecondsPerHour);
+  speed = (totalDistance / 1000) / (elapsedTime / SecondsPerHour);
 end if;
 
 return speed;',
@@ -230,10 +197,8 @@ INSERT INTO O_TFR
 	1,
 	'// Calculate sliding average using the most recent samples.
 
-HeartRateConstants::initialize();
-select any hrc from instances of HeartRateConstants;
 select one workoutTimer related by self->WorkoutTimer[R8.''is_timed_by''];
-select many samples related by self->HeartRateSample[R6.''tracks_heart_rate_over_time_as''] where ( selected.time >= ( workoutTimer.time - (hrc.HeartRateSamplingPeriod * hrc.HeartRateAveragingWindow) ) );
+select many samples related by self->HeartRateSample[R6.''tracks_heart_rate_over_time_as''] where ( selected.time >= ( workoutTimer.time - (HeartRateSamplingPeriod * HeartRateAveragingWindow) ) );
 numberOfSamples = 0;
 sum = 0;
 result = 0;

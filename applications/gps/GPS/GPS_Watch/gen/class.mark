@@ -55,8 +55,9 @@
 .//   value = Default extent size for non-marked class extents.
 .//
 .// Example:
-   .invoke MarkSystemObjectDefaultExtentSize( 200 )
+.//   .invoke MarkSystemObjectDefaultExtentSize( 200 )
 .//============================================================================
+.invoke MarkSystemObjectDefaultExtentSize( 1 )
 .//
 .//
 .//============================================================================
@@ -70,6 +71,9 @@
 .// Example:
 .//   .invoke MarkObjectExtentSize( "myDomain", "MY_OBJ", 20 )
 .//============================================================================
+.invoke MarkObjectExtentSize( "Tracking", "HeartRateSample", 10 )
+.invoke MarkObjectExtentSize( "Tracking", "LapMarker", 5 )
+.invoke MarkObjectExtentSize( "Tracking", "TrackPoint", 10 )
 .//
 .//
 .//============================================================================

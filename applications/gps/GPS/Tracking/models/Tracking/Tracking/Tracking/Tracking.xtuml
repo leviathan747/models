@@ -731,8 +731,7 @@ INSERT INTO SPR_PO
 	VALUES ("9d7afc01-a08f-4e57-91f8-14ca2216f210",
 	'newGoalSpec',
 	'',
-	'::newGoalSpec( spanType:param.spanType, criteriaType:param.criteriaType, 
-			span:param.span, maximum:param.maximum, minimum:param.minimum, sequenceNumber: param.sequenceNumber);',
+	'',
 	1,
 	0);
 INSERT INTO C_EP_PROXY

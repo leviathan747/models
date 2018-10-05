@@ -257,8 +257,7 @@ if ( distance > 1000.0 )
   send UI::setData(value: distance / 1000.0, unit: Unit::km);
 else 
   send UI::setData(value: distance, unit: Unit::meters);
-end if;
-send UI::setIndicator( indicator: Display::goalDispositionIndicator() );',
+end if;',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -274,8 +273,7 @@ INSERT INTO SM_ACT
 	1,
 	'select one session related by self->WorkoutSession[R7.''indicates_current_status_of''];
 speed = session.getCurrentSpeed();
-send UI::setData(value: speed, unit: Unit::kmPerHour);
-send UI::setIndicator( indicator: Display::goalDispositionIndicator() );',
+send UI::setData(value: speed, unit: Unit::kmPerHour);',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -291,8 +289,7 @@ INSERT INTO SM_ACT
 	1,
 	'select one session related by self->WorkoutSession[R7.''indicates_current_status_of''];
 pace = session.getCurrentPace();
-send UI::setData(value: pace, unit: Unit::minPerKm);
-send UI::setIndicator( indicator: Display::goalDispositionIndicator() );',
+send UI::setData(value: pace, unit: Unit::minPerKm);',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -308,8 +305,7 @@ INSERT INTO SM_ACT
 	1,
 	'select one session related by self->WorkoutSession[R7.''indicates_current_status_of''];
 heartRate = session.getCurrentHeartRate();
-send UI::setData(value: heartRate, unit: Unit::bpm);
-send UI::setIndicator( indicator: Display::goalDispositionIndicator() );',
+send UI::setData(value: heartRate, unit: Unit::bpm);',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -325,7 +321,6 @@ INSERT INTO SM_ACT
 	1,
 	'select many lapMarkers related by self->WorkoutSession[R7.''indicates_current_status_of'']->TrackLog[R4.''captures_path_in'']->LapMarker[R5.''has_laps_defined_by''];
 send UI::setData(value: cardinality lapMarkers, unit: Unit::laps);
-send UI::setIndicator( indicator: Display::goalDispositionIndicator() ); 
 ',
 	'',
 	0);

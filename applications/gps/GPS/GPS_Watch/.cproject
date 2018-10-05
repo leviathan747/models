@@ -18,7 +18,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.macosx.exe.debug.1988810443." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.macosx.exe.debug.251567645" name="MacOSX GCC" superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.macosx.exe.debug.390790343" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.macosx.exe.debug"/>
-							<builder buildPath="${workspace_loc:/GPS_Watch}/Debug" id="cdt.managedbuild.target.gnu.builder.macosx.exe.debug.1334263806" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.macosx.exe.debug"/>
+							<builder buildPath="${workspace_loc:/GPS_Watch}" id="cdt.managedbuild.target.gnu.builder.macosx.exe.debug.1334263806" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.macosx.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug.1744980819" name="MacOS X C Linker" superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug">
 								<inputType id="cdt.managedbuild.tool.macosx.c.linker.input.1861964511" superClass="cdt.managedbuild.tool.macosx.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -112,10 +112,10 @@
 		<configuration configurationName="Windows">
 			<resource resourceType="PROJECT" workspacePath="/GPS_Watch"/>
 		</configuration>
-		<configuration configurationName="Mac"/>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/GPS_Watch"/>
 		</configuration>
+		<configuration configurationName="Mac"/>
 		<configuration configurationName="Release">
 			<resource resourceType="PROJECT" workspacePath="/GPS_Watch"/>
 		</configuration>

@@ -22,10 +22,8 @@ if ( empty gps )
   create object instance gps of GPS; gps.id = 1;
   gps.motionSegments = 0;
   
-  simulatedGPS::initialize();
-  select any simgps from instances of simulatedGPS;
-  gps.currentLatitude  = simgps.initialLatitude;
-  gps.currentLongitude = simgps.initialLongitude;
+  gps.currentLatitude  = initialLatitude;
+  gps.currentLongitude = initialLongitude;
 end if;
 ',
 	1,

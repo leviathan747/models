@@ -36,8 +36,6 @@
 .//   .invoke MarkInitializationFunction( "*", "setup" )
 .//   .invoke MarkInitializationFunction( "SeatHeater", "test" )
 .//
-.invoke MarkInitializationFunction( "UI", "init" )
-.invoke MarkInitializationFunction( "Tracking", "GoalTest_1" )
 .// Notes:
 .// (1) If multiple functions are tagged, they will be invoked in
 .//     alphabetical order.
@@ -125,7 +123,7 @@
 .// Example:
 .//   .invoke MarkStateTransitionTracingOn( "component" )
 .//============================================================================
-.invoke MarkStateTransitionTracingOn( "*" )
+.//.invoke MarkStateTransitionTracingOn( "*" )
 .//
 .//
 .//============================================================================
@@ -142,7 +140,7 @@
 .// Example:
 .//   .invoke MarkActionStatementTracingOn()
 .//============================================================================
-.invoke MarkActionStatementTracingOn( "*" )
+.//.invoke MarkActionStatementTracingOn( "*" )
 .//
 .//
 .//============================================================================

@@ -429,13 +429,11 @@ INSERT INTO SM_ACT
 	'
 self.recentHeartRate = 50;
 
-LOG::LogInfo(message: "listener registered");
+//LOG::LogInfo(message: "listener registered");
 
 // start timer
-HeartRateConstants::initialize();
-select any hrc from instances of HeartRateConstants;
 create event instance timeout of HeartRateMonitor3:timeout() to self; 
-self.timer = TIM::timer_start_recurring( event_inst: timeout, microseconds: (hrc.HeartRateSamplingPeriod * 1000000) ); 
+self.timer = TIM::timer_start_recurring( event_inst: timeout, milliseconds:(HeartRateSamplingPeriod * 1000) ); 
 
 generate HeartRateMonitor5:registerComplete() to self;',
 	'',
@@ -453,9 +451,9 @@ INSERT INTO SM_ACT
 	1,
 	'res = TIM::timer_cancel(timer_inst_ref: self.timer);
 if ( res )
-  LOG::LogSuccess( message: "Heart Rate Monitor: timer_cancel() succeeded." );
+  //LOG::LogSuccess( message: "Heart Rate Monitor: timer_cancel() succeeded." );
 else
-  LOG::LogFailure( message: "Heart Rate Monitor: timer_cancel() failed." );
+  //LOG::LogFailure( message: "Heart Rate Monitor: timer_cancel() failed." );
 end if;
 
 generate HeartRateMonitor7:unregisterComplete() to self;

@@ -383,7 +383,7 @@ INSERT INTO SM_ACT
 	VALUES ("fe2328d4-2416-4a02-9b76-beb316347b06",
 	"77ed88df-af92-4f7f-8b31-8a8618436d91",
 	1,
-	'LOG::LogInfo( message:"Locating::GPS::Idle" );',
+	'//LOG::LogInfo( message:"Locating::GPS::Idle" );',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -398,17 +398,15 @@ INSERT INTO SM_ACT
 	"77ed88df-af92-4f7f-8b31-8a8618436d91",
 	1,
 	'// Simulate movement.
-simulatedGPS::initialize();
-select any simgps from instances of simulatedGPS;
 if ( (self.motionSegments % 3) == 0 )
-  self.currentLongitude = self.currentLongitude + (simgps.longitudeIncrement * 2);
-  self.currentLatitude = self.currentLatitude + simgps.latitudeIncrement;
+  self.currentLongitude = self.currentLongitude + (longitudeIncrement * 2);
+  self.currentLatitude = self.currentLatitude + latitudeIncrement;
 elif ( (self.motionSegments %5) == 0 )
-  self.currentLongitude = self.currentLongitude + simgps.longitudeIncrement;
-  self.currentLatitude = self.currentLatitude + (simgps.latitudeIncrement * 3);
+  self.currentLongitude = self.currentLongitude + longitudeIncrement;
+  self.currentLatitude = self.currentLatitude + (latitudeIncrement * 3);
 else
-  self.currentLongitude = self.currentLongitude + simgps.longitudeIncrement;
-  self.currentLatitude = self.currentLatitude + simgps.latitudeIncrement;
+  self.currentLongitude = self.currentLongitude + longitudeIncrement;
+  self.currentLatitude = self.currentLatitude + latitudeIncrement;
 end if;
 // Increment simulated motion segment count.
 self.motionSegments = self.motionSegments + 1;
@@ -428,11 +426,9 @@ INSERT INTO SM_ACT
 	1,
 	'// Activate the simulated GPS (this creates the GPS instance, if needed).
 // Establish recurring timer for periodic position updates.
-simulatedGPS::initialize();
-select any simgps from instances of simulatedGPS;
 create event instance tick of GPS1:tick() to self;
-self.timer = TIM::timer_start_recurring( event_inst: tick, microseconds: simgps.updatePeriod );
-LOG::LogInfo(message: "Location listener registered.");  
+self.timer = TIM::timer_start_recurring( event_inst: tick, milliseconds:updatePeriod );
+//LOG::LogInfo(message: "Location listener registered.");  
 
 generate GPS4:registeringComplete() to self;',
 	'',
@@ -478,10 +474,10 @@ INSERT INTO SM_ACT
 	1,
 	'// Deactivate the timer.
 res = TIM::timer_cancel(timer_inst_ref: self.timer);
-LOG::LogInfo(message: "Location listener unregistered.");
+//LOG::LogInfo(message: "Location listener unregistered.");
 
 if ( not res )
-  LOG::LogFailure( message: "Location listener: timer_cancel() failed." );
+  //LOG::LogFailure( message: "Location listener: timer_cancel() failed." );
 end if;
 generate GPS12:unregisterComplete() to self;',
 	'',

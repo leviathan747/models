@@ -37,6 +37,7 @@
 .//   .invoke MarkSystemConfigurationPackage( "system1" )
 .//============================================================================
 .invoke MarkSystemConfigurationPackage( "GPS_Watch" )
+.invoke EnableArduino()
 .//
 .//============================================================================
 .// Enable Multi-tasking/threading Capability
@@ -91,6 +92,7 @@
 .// Example:
 .//   .invoke TagMaximumStringLength( 64 )
 .//============================================================================
+.invoke TagMaximumStringLength( 8 )
 .//
 .//
 .//============================================================================
@@ -103,6 +105,7 @@
 .// Example:
 .//   .invoke TagMaximumRelationshipExtentSize( 100 )
 .//============================================================================
+.invoke TagMaximumRelationshipExtentSize( 10 )
 .//
 .//
 .//============================================================================
@@ -115,6 +118,7 @@
 .// Example:
 .//   .invoke TagMaximumSelectionExtentSize( 50 )
 .//============================================================================
+.invoke TagMaximumSelectionExtentSize( 10 )
 .//
 .//
 .//============================================================================
@@ -169,6 +173,7 @@
 .// Example:
 .//   .invoke TagMaximumInterleavedBridges( 4 )
 .//============================================================================
+.invoke TagMaximumInterleavedBridges( 2 )
 .//
 .//
 .//============================================================================
@@ -186,6 +191,7 @@
 .// Example:
 .//   .invoke TagInterleavedBridgeDataSize( 2 )
 .//============================================================================
+.invoke TagMaximumInterleavedBridges( 0 )
 .//
 .//
 .//============================================================================

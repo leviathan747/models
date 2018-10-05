@@ -628,9 +628,7 @@ INSERT INTO SM_ACT
 	"c4cafc68-b5c2-f769-2746-b4aaac0bac84",
 	1,
 	'// Update the stopwatch time.
-WorkoutTimerConstants::initialize();
-select any wtc from instances of WorkoutTimerConstants;
-self.time = self.time + wtc.timerPeriod;
+self.time = self.time + timerPeriod;
 
 // Store a new track point.
 select one trackLog related by self->WorkoutSession[R8.''acts_as_the_stopwatch_for'']->TrackLog[R4.''captures_path_in''];

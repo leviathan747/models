@@ -81,13 +81,11 @@ INSERT INTO S_SYNC
 	'// Return the straight-line distance, expressed in meters, between the 
 // two points passed as parameters, expressed in decimal degrees.
 
-Distance::initialize();
-select any distance from instances of Distance;
 deltaLat = param.toLat - param.fromLat;
 deltaLong = param.toLong - param.fromLong;
 sumSquares = (deltaLat * deltaLat) + (deltaLong * deltaLong);
 sqrtSum = ::sqrt( x:sumSquares );
-result = (sqrtSum * distance.kmPerDegree * 1000 );
+result = (sqrtSum * kmPerDegree * 1000 );
 param.result = result;
 
 ',

@@ -1,0 +1,173 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	"00000000-0000-0000-0000-000000000000",
+	'UI_Tracking',
+	'');
+INSERT INTO C_EP
+	VALUES ("ab823552-c4a6-4391-a78d-2c5186cb5068",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	0,
+	'setTargetPressed',
+	'');
+INSERT INTO C_IO
+	VALUES ("ab823552-c4a6-4391-a78d-2c5186cb5068",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'setTargetPressed',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("f296f25e-88fa-463a-b5f2-f8c1d24dad2b",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	0,
+	'startStopPressed',
+	'');
+INSERT INTO C_IO
+	VALUES ("f296f25e-88fa-463a-b5f2-f8c1d24dad2b",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'startStopPressed',
+	'',
+	0,
+	'',
+	"ab823552-c4a6-4391-a78d-2c5186cb5068");
+INSERT INTO C_EP
+	VALUES ("89e543e7-7679-4261-8d0a-9fca85a59e94",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	0,
+	'lapResetPressed',
+	'');
+INSERT INTO C_IO
+	VALUES ("89e543e7-7679-4261-8d0a-9fca85a59e94",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'lapResetPressed',
+	'',
+	0,
+	'',
+	"f296f25e-88fa-463a-b5f2-f8c1d24dad2b");
+INSERT INTO C_EP
+	VALUES ("a7656b57-bd2e-4546-bfc2-3a337bbc06f1",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	0,
+	'lightPressed',
+	'');
+INSERT INTO C_IO
+	VALUES ("a7656b57-bd2e-4546-bfc2-3a337bbc06f1",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'lightPressed',
+	'',
+	0,
+	'',
+	"89e543e7-7679-4261-8d0a-9fca85a59e94");
+INSERT INTO C_EP
+	VALUES ("48276f82-3036-440f-9700-7474ffd8a464",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	0,
+	'modePressed',
+	'');
+INSERT INTO C_IO
+	VALUES ("48276f82-3036-440f-9700-7474ffd8a464",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'modePressed',
+	'',
+	0,
+	'',
+	"a7656b57-bd2e-4546-bfc2-3a337bbc06f1");
+INSERT INTO C_EP
+	VALUES ("0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	0,
+	'newGoalSpec',
+	'');
+INSERT INTO C_IO
+	VALUES ("0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'newGoalSpec',
+	'',
+	0,
+	'',
+	"48276f82-3036-440f-9700-7474ffd8a464");
+INSERT INTO C_PP
+	VALUES ("d3d126a0-4ccc-46c9-b96a-efebeedbde5c",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"086c7551-0320-4c68-aa32-3d7191c74899",
+	'spanType',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("086c7551-0320-4c68-aa32-3d7191c74899",
+	"00000000-0000-0000-0000-000000000000",
+	'UIGoalSpan',
+	'',
+	'',
+	'../UI_Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("7f5d2d3c-dfc8-426e-a4fc-87d0605e0c3c",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"d355bdf5-0340-4ea3-903c-b21aa4f038ef",
+	'criteriaType',
+	'',
+	0,
+	'',
+	"d3d126a0-4ccc-46c9-b96a-efebeedbde5c");
+INSERT INTO S_DT_PROXY
+	VALUES ("d355bdf5-0340-4ea3-903c-b21aa4f038ef",
+	"00000000-0000-0000-0000-000000000000",
+	'UIGoalCriteria',
+	'',
+	'',
+	'../UI_Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("4390c240-1828-4cae-a1bf-79161a5a0468",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'span',
+	'',
+	0,
+	'',
+	"7f5d2d3c-dfc8-426e-a4fc-87d0605e0c3c");
+INSERT INTO C_PP
+	VALUES ("8bc6d7df-8d9d-4b54-adb3-618d2706f955",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'maximum',
+	'',
+	0,
+	'',
+	"4390c240-1828-4cae-a1bf-79161a5a0468");
+INSERT INTO C_PP
+	VALUES ("1f42823f-f70f-4c62-904b-bc32aa70595a",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'minimum',
+	'',
+	0,
+	'',
+	"8bc6d7df-8d9d-4b54-adb3-618d2706f955");
+INSERT INTO C_PP
+	VALUES ("09eae5cb-051a-42fb-92ec-0e7f96e8b273",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'sequenceNumber',
+	'',
+	0,
+	'',
+	"1f42823f-f70f-4c62-904b-bc32aa70595a");
+INSERT INTO PE_PE
+	VALUES ("98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
+	1,
+	"5eaf4a99-c2b0-4b4e-b286-7c95223eba73",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("5eaf4a99-c2b0-4b4e-b286-7c95223eba73",
+	"36a41cf7-d411-488d-99fc-74866d4fea39",
+	"36a41cf7-d411-488d-99fc-74866d4fea39",
+	'UI_Shared',
+	'',
+	0,
+	'../UI_Shared.xtuml');

@@ -1013,7 +1013,7 @@ INSERT INTO C_PO
 	0);
 INSERT INTO C_IR
 	VALUES ("051952e8-89b7-4d6c-b501-97b4db388c26",
-	"06e358bd-8488-4092-af9c-7c359b158f4d",
+	"e346c958-67d5-409f-972d-538284c8547b",
 	"00000000-0000-0000-0000-000000000000",
 	"3ce98469-5f8c-495d-aafc-bfd37447360a");
 INSERT INTO C_R
@@ -1023,83 +1023,83 @@ INSERT INTO C_R
 	'Unnamed Interface',
 	'GPS_Watch::UI::UI');
 INSERT INTO SPR_REP
-	VALUES ("dfd37216-d998-4df1-8f3c-d27fa96c3efc",
-	"b73227de-490d-4b51-a2f2-0487bde474af",
+	VALUES ("6e70f676-875b-419f-9d30-600272c3e8c5",
+	"7f4be91d-0fb6-403c-a2e1-7831a70be3cd",
 	"051952e8-89b7-4d6c-b501-97b4db388c26");
 INSERT INTO SPR_RO
-	VALUES ("dfd37216-d998-4df1-8f3c-d27fa96c3efc",
+	VALUES ("6e70f676-875b-419f-9d30-600272c3e8c5",
 	'setTime',
 	'',
-	'',
+	'GuiBridge::setTime( time:param.time );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("b73227de-490d-4b51-a2f2-0487bde474af",
-	"06e358bd-8488-4092-af9c-7c359b158f4d",
+	VALUES ("7f4be91d-0fb6-403c-a2e1-7831a70be3cd",
+	"e346c958-67d5-409f-972d-538284c8547b",
 	-1,
 	'setTime',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI/UI.xtuml');
+	'../../UI_Shared/UI/UI.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("e26c5ab0-50fe-4470-99a7-b4636812c631",
-	"f9a5672f-67fa-48da-8c7e-2a4cc64bf0fd",
+	VALUES ("9379a122-b709-4a2f-949d-cd50493bc5a6",
+	"6fc20910-413b-4c6a-91ae-f96d54606985",
 	"051952e8-89b7-4d6c-b501-97b4db388c26");
 INSERT INTO SPR_RO
-	VALUES ("e26c5ab0-50fe-4470-99a7-b4636812c631",
+	VALUES ("9379a122-b709-4a2f-949d-cd50493bc5a6",
 	'setData',
 	'',
 	'',
-	1,
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("f9a5672f-67fa-48da-8c7e-2a4cc64bf0fd",
-	"06e358bd-8488-4092-af9c-7c359b158f4d",
+	VALUES ("6fc20910-413b-4c6a-91ae-f96d54606985",
+	"e346c958-67d5-409f-972d-538284c8547b",
 	-1,
 	'setData',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI/UI.xtuml');
+	'../../UI_Shared/UI/UI.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("61bdadc7-a885-40cf-b496-602ac43b6329",
-	"b64e537b-ac94-4f65-90c0-8ac26c754583",
+	VALUES ("9f9d38ca-214a-438d-a8fc-0d4bbf426b00",
+	"2b39c101-3155-427b-a71d-d5c58cd2848b",
 	"051952e8-89b7-4d6c-b501-97b4db388c26");
 INSERT INTO SPR_RO
-	VALUES ("61bdadc7-a885-40cf-b496-602ac43b6329",
+	VALUES ("9f9d38ca-214a-438d-a8fc-0d4bbf426b00",
 	'startTest',
 	'',
 	'',
-	1,
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("b64e537b-ac94-4f65-90c0-8ac26c754583",
-	"06e358bd-8488-4092-af9c-7c359b158f4d",
+	VALUES ("2b39c101-3155-427b-a71d-d5c58cd2848b",
+	"e346c958-67d5-409f-972d-538284c8547b",
 	-1,
 	'startTest',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI/UI.xtuml');
+	'../../UI_Shared/UI/UI.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("7575cf5c-519b-458e-9e83-efce7af11389",
-	"40870179-79b6-44a6-a9e4-b4e5dd344842",
+	VALUES ("7eca3d3b-b2d6-4a32-afe3-b6126b52a556",
+	"a82a4901-566f-4db7-812f-3f3b7845a33f",
 	"051952e8-89b7-4d6c-b501-97b4db388c26");
 INSERT INTO SPR_RO
-	VALUES ("7575cf5c-519b-458e-9e83-efce7af11389",
+	VALUES ("7eca3d3b-b2d6-4a32-afe3-b6126b52a556",
 	'setIndicator',
 	'',
 	'',
-	1,
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("40870179-79b6-44a6-a9e4-b4e5dd344842",
-	"06e358bd-8488-4092-af9c-7c359b158f4d",
+	VALUES ("a82a4901-566f-4db7-812f-3f3b7845a33f",
+	"e346c958-67d5-409f-972d-538284c8547b",
 	-1,
 	'setIndicator',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI/UI.xtuml');
+	'../../UI_Shared/UI/UI.xtuml');
 INSERT INTO C_I_PROXY
-	VALUES ("06e358bd-8488-4092-af9c-7c359b158f4d",
+	VALUES ("e346c958-67d5-409f-972d-538284c8547b",
 	"00000000-0000-0000-0000-000000000000",
 	'UI',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI/UI.xtuml');
+	'../../UI_Shared/UI/UI.xtuml');
 INSERT INTO C_PO
 	VALUES ("ecdf9777-167e-4aa4-b796-aa9d5db40308",
 	"0b2d54fe-9cfc-4ba0-8d19-92f0e230ee72",
@@ -1411,7 +1411,7 @@ INSERT INTO C_PO
 	0);
 INSERT INTO C_IR
 	VALUES ("201acaa8-26ea-4725-966a-d5d56330c28a",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	"00000000-0000-0000-0000-000000000000",
 	"738138d1-3361-4db6-b93c-baea531a47dd");
 INSERT INTO C_P
@@ -1421,135 +1421,119 @@ INSERT INTO C_P
 	'',
 	'GPS_Watch::UI__TRACK::UI_Tracking');
 INSERT INTO SPR_PEP
-	VALUES ("af5d68f3-4af1-4fc5-ad77-d4e49508cbbb",
-	"07132452-8f07-4042-b1d4-662283b4c70e",
+	VALUES ("f680c042-ddbe-4297-998f-ab57c44c7200",
+	"ab823552-c4a6-4391-a78d-2c5186cb5068",
 	"201acaa8-26ea-4725-966a-d5d56330c28a");
 INSERT INTO SPR_PO
-	VALUES ("af5d68f3-4af1-4fc5-ad77-d4e49508cbbb",
+	VALUES ("f680c042-ddbe-4297-998f-ab57c44c7200",
 	'setTargetPressed',
 	'',
-	'Tracking::setTargetPressed();',
-	1,
+	'',
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("07132452-8f07-4042-b1d4-662283b4c70e",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("ab823552-c4a6-4391-a78d-2c5186cb5068",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	0,
 	'setTargetPressed',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("c734578c-d953-4852-b034-57b3259574d6",
-	"af999492-1d23-4ba1-90dd-7a81e3050362",
+	VALUES ("40b56b4e-cc8d-4e1a-aa19-0a0fe41a0c1c",
+	"f296f25e-88fa-463a-b5f2-f8c1d24dad2b",
 	"201acaa8-26ea-4725-966a-d5d56330c28a");
 INSERT INTO SPR_PO
-	VALUES ("c734578c-d953-4852-b034-57b3259574d6",
+	VALUES ("40b56b4e-cc8d-4e1a-aa19-0a0fe41a0c1c",
 	'startStopPressed',
 	'',
-	'Tracking::startStopPressed();',
-	1,
+	'',
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("af999492-1d23-4ba1-90dd-7a81e3050362",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("f296f25e-88fa-463a-b5f2-f8c1d24dad2b",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	0,
 	'startStopPressed',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("3f5cd2a4-1e68-4c61-8424-88b4c5e58d0e",
-	"34c5a68f-0dec-4df3-bbd4-45898c5e2bc7",
+	VALUES ("c24d3300-5035-4bf0-adf4-f996e722cb7b",
+	"89e543e7-7679-4261-8d0a-9fca85a59e94",
 	"201acaa8-26ea-4725-966a-d5d56330c28a");
 INSERT INTO SPR_PO
-	VALUES ("3f5cd2a4-1e68-4c61-8424-88b4c5e58d0e",
+	VALUES ("c24d3300-5035-4bf0-adf4-f996e722cb7b",
 	'lapResetPressed',
 	'',
-	'Tracking::lapResetPressed();',
-	1,
+	'',
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("34c5a68f-0dec-4df3-bbd4-45898c5e2bc7",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("89e543e7-7679-4261-8d0a-9fca85a59e94",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	0,
 	'lapResetPressed',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("cb4d3ba8-fe12-4271-9427-a71e03eea543",
-	"6db7bc40-c44d-40ff-818a-3a47370a0bb8",
+	VALUES ("9a9224ca-efda-41d9-b8fe-51a6485f437e",
+	"a7656b57-bd2e-4546-bfc2-3a337bbc06f1",
 	"201acaa8-26ea-4725-966a-d5d56330c28a");
 INSERT INTO SPR_PO
-	VALUES ("cb4d3ba8-fe12-4271-9427-a71e03eea543",
+	VALUES ("9a9224ca-efda-41d9-b8fe-51a6485f437e",
 	'lightPressed',
 	'',
-	'Tracking::lightPressed();',
-	1,
+	'',
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("6db7bc40-c44d-40ff-818a-3a47370a0bb8",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("a7656b57-bd2e-4546-bfc2-3a337bbc06f1",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	0,
 	'lightPressed',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("548062ac-1238-40ec-8f47-1af5b05c71b5",
-	"a4069c63-0a2c-4b17-a892-e58125490e8c",
+	VALUES ("354fb0d5-cce8-4f35-8703-10ca8e378a42",
+	"48276f82-3036-440f-9700-7474ffd8a464",
 	"201acaa8-26ea-4725-966a-d5d56330c28a");
 INSERT INTO SPR_PO
-	VALUES ("548062ac-1238-40ec-8f47-1af5b05c71b5",
+	VALUES ("354fb0d5-cce8-4f35-8703-10ca8e378a42",
 	'modePressed',
 	'',
-	'Tracking::modePressed();',
-	1,
+	'',
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("a4069c63-0a2c-4b17-a892-e58125490e8c",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("48276f82-3036-440f-9700-7474ffd8a464",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	0,
 	'modePressed',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("7d72cc27-7fdd-403a-b110-bc81352e3841",
-	"2a16025e-7fd4-4db6-9eb2-34674b5cb93d",
+	VALUES ("27840c2b-7922-433f-8519-56724e6d621a",
+	"0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
 	"201acaa8-26ea-4725-966a-d5d56330c28a");
 INSERT INTO SPR_PO
-	VALUES ("7d72cc27-7fdd-403a-b110-bc81352e3841",
+	VALUES ("27840c2b-7922-433f-8519-56724e6d621a",
 	'newGoalSpec',
 	'',
-	'if ( param.criteriaType == UIGoalCriteria::HeartRate )
-  if ( param.spanType == UIGoalSpan::Distance )
-    Tracking::newGoalSpec( spanType:GoalSpan::Distance, criteriaType:GoalCriteria::HeartRate, 
-        span:param.span, maximum:param.maximum, minimum:param.minimum, sequenceNumber:param.sequenceNumber);
-  elif ( param.spanType == UIGoalSpan::Time )
-    Tracking::newGoalSpec( spanType:GoalSpan::Time, criteriaType:GoalCriteria::HeartRate, 
-        span:param.span, maximum:param.maximum, minimum:param.minimum, sequenceNumber:param.sequenceNumber);
-  end if;
-elif ( param.criteriaType == UIGoalCriteria::Pace )
-  if ( param.spanType == UIGoalSpan::Distance )
-    Tracking::newGoalSpec( spanType:GoalSpan::Distance, criteriaType:GoalCriteria::Pace, 
-        span:param.span, maximum:param.maximum, minimum:param.minimum, sequenceNumber:param.sequenceNumber);
-  elif ( param.spanType == UIGoalSpan::Time )
-    Tracking::newGoalSpec( spanType:GoalSpan::Time, criteriaType:GoalCriteria::Pace, 
-        span:param.span, maximum:param.maximum, minimum:param.minimum, sequenceNumber:param.sequenceNumber);
-  end if;
-end if;',
-	1,
+	'',
+	3,
 	0);
 INSERT INTO C_EP_PROXY
-	VALUES ("2a16025e-7fd4-4db6-9eb2-34674b5cb93d",
-	"3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",
+	"98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	0,
 	'newGoalSpec',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO C_I_PROXY
-	VALUES ("3e593067-ea65-46a2-9c45-f1610f6e433f",
+	VALUES ("98f3ab4c-a561-4aa2-b55d-9fc11de5c352",
 	"00000000-0000-0000-0000-000000000000",
 	'UI_Tracking',
 	'',
-	'../../../../../UI/models/UI/UI/Shared/UI_Tracking/UI_Tracking.xtuml');
+	'../../UI_Shared/UI_Tracking/UI_Tracking.xtuml');
 INSERT INTO C_PO
 	VALUES ("73b582e5-bb19-43a8-a611-73758e0951de",
 	"0b2d54fe-9cfc-4ba0-8d19-92f0e230ee72",
