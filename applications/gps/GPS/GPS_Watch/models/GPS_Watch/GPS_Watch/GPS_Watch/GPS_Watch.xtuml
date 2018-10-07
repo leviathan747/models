@@ -1030,7 +1030,7 @@ INSERT INTO SPR_RO
 	VALUES ("6e70f676-875b-419f-9d30-600272c3e8c5",
 	'setTime',
 	'',
-	'GuiBridge::setTime( time:param.time );',
+	'DISP::showTime( time:param.time );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1048,8 +1048,8 @@ INSERT INTO SPR_RO
 	VALUES ("9379a122-b709-4a2f-949d-cd50493bc5a6",
 	'setData',
 	'',
-	'',
-	3,
+	'DISP::showNumber( num:param.value );',
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6fc20910-413b-4c6a-91ae-f96d54606985",
@@ -1067,7 +1067,7 @@ INSERT INTO SPR_RO
 	'startTest',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2b39c101-3155-427b-a71d-d5c58cd2848b",
@@ -1085,7 +1085,7 @@ INSERT INTO SPR_RO
 	'setIndicator',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a82a4901-566f-4db7-812f-3f3b7845a33f",
@@ -1429,7 +1429,7 @@ INSERT INTO SPR_PO
 	'setTargetPressed',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("ab823552-c4a6-4391-a78d-2c5186cb5068",
@@ -1447,7 +1447,7 @@ INSERT INTO SPR_PO
 	'startStopPressed',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("f296f25e-88fa-463a-b5f2-f8c1d24dad2b",
@@ -1465,7 +1465,7 @@ INSERT INTO SPR_PO
 	'lapResetPressed',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("89e543e7-7679-4261-8d0a-9fca85a59e94",
@@ -1483,7 +1483,7 @@ INSERT INTO SPR_PO
 	'lightPressed',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a7656b57-bd2e-4546-bfc2-3a337bbc06f1",
@@ -1501,7 +1501,7 @@ INSERT INTO SPR_PO
 	'modePressed',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("48276f82-3036-440f-9700-7474ffd8a464",
@@ -1519,7 +1519,7 @@ INSERT INTO SPR_PO
 	'newGoalSpec',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("0dd0a9fe-c717-4dd5-950b-a16fd2ad2c1c",

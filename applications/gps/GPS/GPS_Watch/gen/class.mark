@@ -73,7 +73,7 @@
 .//============================================================================
 .invoke MarkObjectExtentSize( "Tracking", "HeartRateSample", 10 )
 .invoke MarkObjectExtentSize( "Tracking", "LapMarker", 5 )
-.invoke MarkObjectExtentSize( "Tracking", "TrackPoint", 10 )
+.invoke MarkObjectExtentSize( "Tracking", "TrackPoint", 20 )
 .//
 .//
 .//============================================================================

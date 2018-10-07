@@ -28,6 +28,7 @@
 .//============================================================================
 .invoke TagSyncServiceSafeForInterrupts( "Tracking", "startStopPressed" )
 .invoke TagSyncServiceSafeForInterrupts( "Tracking", "lapResetPressed" )
+.invoke TagSyncServiceSafeForInterrupts( "Tracking", "modePressed" )
 .//
 .//
 .//============================================================================

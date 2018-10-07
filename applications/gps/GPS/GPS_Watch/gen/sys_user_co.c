@@ -26,14 +26,22 @@
 #define SYS_USER_CO_PRINTF( s )
 #endif
 
+// pin definitions
+#define DEBUG_PIN       11
+#define START_STOP_PIN   4
+#define LAP_RESET_PIN    5
+#define MODE_PIN         6
+
 extern bool Escher_run_flag;
+void DISP_showTime( const i_t p_time );
+void DISP_showNumber( const i_t p_num );
 
 void
 handle_error( int code ) {
   for ( int i = 0; i < code; i++ ) {
-    digitalWrite(2, HIGH);
+    digitalWrite(DEBUG_PIN, HIGH);
     delay(100);
-    digitalWrite(2, LOW);
+    digitalWrite(DEBUG_PIN, LOW);
     delay(100);
   }
   Escher_run_flag = false;
@@ -66,14 +74,13 @@ UserPreOoaInitializationCalloutf( void )
 {
   /* Insert implementation specific code here.  */
   SYS_USER_CO_PRINTF( "UserPreOoaInitializationCallout\n" )
-  pinMode(2, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, INPUT);
-  pinMode(12, INPUT);
+  pinMode(DEBUG_PIN, OUTPUT);
+  pinMode(START_STOP_PIN, INPUT);
+  pinMode(LAP_RESET_PIN, INPUT);
+  pinMode(MODE_PIN, INPUT);
   pinMode(LED_BUILTIN, OUTPUT);
+  DISP_showTime(0);
+  DISP_showNumber(0);
 }
 
 /*
@@ -105,15 +112,16 @@ void Tracking_lapResetPressed();
 
 bool button1_pressed = false;
 bool button2_pressed = false;
+bool button3_pressed = false;
 
 void
 UserBackgroundProcessingCalloutf( void )
 {
   // START/STOP button
-  if ( button1_pressed && HIGH == digitalRead(11) ) {
+  if ( button1_pressed && HIGH == digitalRead(START_STOP_PIN) ) {
     button1_pressed = false; // switch to unpressed state
   }
-  else if ( !button1_pressed && LOW == digitalRead(11) ) {
+  else if ( !button1_pressed && LOW == digitalRead(START_STOP_PIN) ) {
     button1_pressed = true;  // switch to pressed state and send signal
     digitalWrite(LED_BUILTIN, HIGH);
     delay(50);
@@ -122,15 +130,27 @@ UserBackgroundProcessingCalloutf( void )
   }
 
   // LAP/RESET button
-  if ( button2_pressed && HIGH == digitalRead(12) ) {
+  if ( button2_pressed && HIGH == digitalRead(LAP_RESET_PIN) ) {
     button2_pressed = false; // switch to unpressed state
   }
-  else if ( !button2_pressed && LOW == digitalRead(12) ) {
+  else if ( !button2_pressed && LOW == digitalRead(LAP_RESET_PIN) ) {
     button2_pressed = true;  // switch to pressed state and send signal
     digitalWrite(LED_BUILTIN, HIGH);
     delay(50);
     digitalWrite(LED_BUILTIN, LOW);
     Tracking_lapResetPressed();
+  }
+
+  // MODE button
+  if ( button3_pressed && HIGH == digitalRead(MODE_PIN) ) {
+    button3_pressed = false; // switch to unpressed state
+  }
+  else if ( !button3_pressed && LOW == digitalRead(MODE_PIN) ) {
+    button3_pressed = true;  // switch to pressed state and send signal
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(50);
+    digitalWrite(LED_BUILTIN, LOW);
+    Tracking_modePressed();
   }
 }
 

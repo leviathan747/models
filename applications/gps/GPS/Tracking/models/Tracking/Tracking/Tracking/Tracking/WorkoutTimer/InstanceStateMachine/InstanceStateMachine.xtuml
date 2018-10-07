@@ -631,8 +631,11 @@ INSERT INTO SM_ACT
 self.time = self.time + timerPeriod;
 
 // Store a new track point.
-select one trackLog related by self->WorkoutSession[R8.''acts_as_the_stopwatch_for'']->TrackLog[R4.''captures_path_in''];
-trackLog.addTrackPoint();
+// only store track point every third second
+if ( self.time % 3 == 0 )
+  select one trackLog related by self->WorkoutSession[R8.''acts_as_the_stopwatch_for'']->TrackLog[R4.''captures_path_in''];
+  trackLog.addTrackPoint();
+end if;
 
 // Refresh the user interface.
 send UI::setTime(time: self.time);

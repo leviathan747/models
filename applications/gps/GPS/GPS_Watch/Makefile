@@ -1,6 +1,6 @@
 ARDUINO_CLI=arduino-cli
 FQBN=arduino:avr:uno
-PORT=/dev/cu.usbmodem14601
+PORT=/dev/cu.usbmodem14101
 
 all:  compile upload
 
