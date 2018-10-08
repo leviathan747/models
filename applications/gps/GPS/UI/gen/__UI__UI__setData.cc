@@ -11,32 +11,21 @@
 #include "swa/Stack.hh"
 
 extern "C" {
-#include "UI_GuiBridge_bridge.h"
+#include <stdlib.h>
+#include <stdio.h>
 }
+
+#define CLK 5
+#define DIO 6
 
 namespace masld_UI
 {
   void maslo_UI::masls_setData ( double  maslp_value,
                                  int32_t maslp_unit )
   {
-
-    // begin ...
-    // end;
-    {
-      ::SWA::Stack::EnteringObjectService enteringActionMarker(getDomain().getId(), objectId_maslo_UI, serviceId_masls_setData);
-      ::SWA::Stack::DeclareThis thisVar(this);
-      ::SWA::Stack::DeclareParameter pm_maslp_value(maslp_value);
-      ::SWA::Stack::DeclareParameter pm_maslp_unit(maslp_unit);
-      ::SWA::Stack::EnteredAction enteredActionMarker;
-      ::SWA::Stack::ExecutingStatement statement(3);
-      {
-
-        {
-          ::SWA::Stack::ExecutingStatement statement(5);
-          UI_GuiBridge_setData( maslp_unit, maslp_value );
-        }
-      }
-    }
+    char buf[256];
+    sprintf(buf, "sudo python3 tm1637.py %d %d displayNumber %d", CLK, DIO, maslp_value);
+    system(buf);
   }
 
 }

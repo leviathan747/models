@@ -18,15 +18,16 @@
 #include "swa/Timestamp.hh"
 #include "swa/types.hh"
 
-extern "C" {
-#include "UI_GuiBridge_bridge.h"
-}
+#include <wiringPi.h>
+
+#define START_STOP_PIN  2
+#define LAP_RESET_PIN   0
+#define MODE_PIN        1
 
 namespace masld_UI
 {
   void maslo_UI::masls_connect ( )
   {
-
     // declare ...
     // begin ...
     // end;
@@ -70,8 +71,11 @@ namespace masld_UI
 
         // ui.socket_id := (- 1);
         {
-          ::SWA::Stack::ExecutingStatement statement(10);
-          maslv_ui->set_masla_socket_id( UI_GuiBridge_connect() );
+          maslv_ui->set_masla_socket_id( 0 );
+					wiringPiSetup();
+					pinMode(MODE_PIN,       INPUT);
+					pinMode(START_STOP_PIN, INPUT);
+					pinMode(LAP_RESET_PIN,  INPUT);
         }
 
         // if (uiconst.SOCKET_ERROR /= ui.socket_id) then ...

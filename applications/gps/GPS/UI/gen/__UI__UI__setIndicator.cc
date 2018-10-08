@@ -11,30 +11,12 @@
 #include "swa/Stack.hh"
 
 extern "C" {
-#include "UI_GuiBridge_bridge.h"
 }
 
 namespace masld_UI
 {
   void maslo_UI::masls_setIndicator ( int32_t maslp_value )
   {
-
-    // begin ...
-    // end;
-    {
-      ::SWA::Stack::EnteringObjectService enteringActionMarker(getDomain().getId(), objectId_maslo_UI, serviceId_masls_setIndicator);
-      ::SWA::Stack::DeclareThis thisVar(this);
-      ::SWA::Stack::DeclareParameter pm_maslp_value(maslp_value);
-      ::SWA::Stack::EnteredAction enteredActionMarker;
-      ::SWA::Stack::ExecutingStatement statement(2);
-      {
-
-        {
-          ::SWA::Stack::ExecutingStatement statement(4);
-          UI_GuiBridge_setIndicator( maslp_value );
-        }
-      }
-    }
   }
 
 }

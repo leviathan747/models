@@ -11,30 +11,20 @@
 #include "swa/Stack.hh"
 
 extern "C" {
-#include "UI_GuiBridge_bridge.h"
+#include <stdlib.h>
+#include <stdio.h>
 }
+
+#define CLK 23
+#define DIO 24
 
 namespace masld_UI
 {
   void maslo_UI::masls_setTime ( int32_t maslp_time )
   {
-
-    // begin ...
-    // end;
-    {
-      ::SWA::Stack::EnteringObjectService enteringActionMarker(getDomain().getId(), objectId_maslo_UI, serviceId_masls_setTime);
-      ::SWA::Stack::DeclareThis thisVar(this);
-      ::SWA::Stack::DeclareParameter pm_maslp_time(maslp_time);
-      ::SWA::Stack::EnteredAction enteredActionMarker;
-      ::SWA::Stack::ExecutingStatement statement(2);
-      {
-
-        {
-          ::SWA::Stack::ExecutingStatement statement(4);
-          UI_GuiBridge_setTime( maslp_time );
-        }
-      }
-    }
+    char buf[256];
+    sprintf(buf, "sudo python3 tm1637.py %d %d displayTime %d", CLK, DIO, maslp_time);
+    system(buf);
   }
 
 }
